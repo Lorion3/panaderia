@@ -3,6 +3,8 @@
 @section('dinamico')
 
 
+
+
 <div class="max-w-5xl mx-auto p-6">
     
     <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
@@ -114,6 +116,8 @@
             </div>
 
         </form>
+
+
     </div>
 </div>
 

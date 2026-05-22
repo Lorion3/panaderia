@@ -41,6 +41,7 @@
             
             <ul><a href="/venta" class="hover:text-blue-600">Venta</a></ul>
             
+            u
 
                 </div>
 
@@ -88,6 +89,8 @@
             <li><a href="/producto" class="hover:text-blue-600">Producto</a></li>
 
             <li><a href="/proveedor" class="hover:text-blue-600">Proveedor</a></li>
+
+           
 
             </ul>
 

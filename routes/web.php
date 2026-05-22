@@ -12,3 +12,4 @@ Route::view('/pedido','/pedido/inicio');
 Route::view('/producto','/producto/inicio');
 Route::view('/proveedor','/proveedor/inicio');
 Route::view('venta','/venta/inicio');
+Route::view('/administrador','/administrador/tabla');
