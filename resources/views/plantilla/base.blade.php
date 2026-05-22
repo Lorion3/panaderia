@@ -41,7 +41,7 @@
             
             <ul><a href="/venta" class="hover:text-blue-600">Venta</a></ul>
             
-            u
+            
 
                 </div>
 
