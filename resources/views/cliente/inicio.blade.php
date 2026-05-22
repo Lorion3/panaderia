@@ -2,9 +2,105 @@
 
 @section('dinamico')
 
-
-<h1>MODULO DE LOS CLIENTES</h1>
+<div class="max-w-5xl mx-auto p-6">
+    
+    <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
         
+        <!-- Header -->
+        <div class="bg-blue-800 text-white px-6 py-4">
+            <h2 class="text-2xl font-bold">Registrar Cliente</h2>
+            <p class="text-blue-100 text-sm">Completa la información del cliente</p>
+        </div>
+
+        <!-- Body -->
+        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Nombre -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Nombre *
+                </label>
+                <input type="text" name="nombre" required
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+
+            <!-- Apellido Paterno -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Apellido Paterno *
+                </label>
+                <input type="text" name="apellido_paterno" required
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+
+            <!-- Apellido Materno -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Apellido Materno
+                </label>
+                <input type="text" name="apellido_materno"
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+
+            <!-- Teléfono -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Teléfono *
+                </label>
+                <input type="tel" name="telefono" required maxlength="10"
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+
+            <!-- Correo -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Correo *
+                </label>
+                <input type="email" name="correo" required
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+
+            <!-- Estatus -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Estatus
+                </label>
+                <select name="estatus"
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+            </div>
+
+            <!-- Dirección -->
+            <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Dirección
+                </label>
+                <input type="text" name="direccion"
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+
+            <!-- Imagen -->
+            <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Imagen
+                </label>
+                <input type="file" name="imagen" accept="image/*"
+                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
+                <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
+            </div>
+
+            <!-- Botón -->
+            <div class="md:col-span-2 flex justify-end">
+                <button type="submit"
+                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
+                    Guardar Cliente
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
 
 @endsection
- 

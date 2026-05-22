@@ -133,7 +133,7 @@
 
         <div class="max-w-7xl mx-auto px-4 text-center text-gray-500">
 
-            © 2026 - Laravel 12 + TailwindCSS
+            © 2026 - 
 
         </div>
 
