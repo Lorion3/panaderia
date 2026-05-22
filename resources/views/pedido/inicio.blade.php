@@ -2,9 +2,78 @@
 
 @section('dinamico')
 
-         
- <h1>MODULO DE LOS PEDIDOS</h1>
- 
+ <div class="max-w-5xl mx-auto p-6">
+
+    <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
+
+        <div class="bg-blue-800 text-white px-6 py-4">
+            <h2 class="text-2xl font-bold">Registrar Pedido</h2>
+        </div>
+
+        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Proveedor
+                </label>
+                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+                    <option>Seleccionar proveedor</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Cantidad
+                </label>
+                <input type="number"
+                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Precio
+                </label>
+                <input type="number" step="0.01"
+                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Impuesto
+                </label>
+                <input type="number" step="0.01"
+                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Total
+                </label>
+                <input type="number" step="0.01"
+                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    Estatus
+                </label>
+                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+                    <option>Realizado</option>
+                    <option>Cancelado</option>
+                </select>
+            </div>
+
+            <div class="md:col-span-2 flex justify-end">
+                <button type="submit"
+                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition">
+                    Guardar Pedido
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
 @endsection
  
    
