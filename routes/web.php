@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/','welcome');
+Route::view('/','inicio');
 Route::view('/cliente','/cliente/inicio');
 //carpeta y la raiz a donde quiero entrar
 //eror 404, carpeta no escrita correcta
