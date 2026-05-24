@@ -19,7 +19,7 @@
                 <!-- LOGO -->
                 <div class="flex items-center">
                     <a href="#" class="text-2xl font-bold text-blue-600">
-                        MiSistema
+                        Panaderia
                     </a>
                 </div>
 
@@ -29,9 +29,9 @@
   
             <ul><a href="/" class="hover:text-blue-600">Inicio</a></ul>
 
-            <ul><a href="/administrador" class="hover:text-blue-600">Administradores</a></ul>
+            <ul><a href="/administrador" class="hover:text-blue-600">Empleado</a></ul>
 
-            <ul><a href="/cliente" class="hover:text-blue-600">Clientes</a></ul>
+            <ul><a href="/cliente" class="hover:text-blue-600">Cliente</a></ul>
 
             <ul><a href="/pedido" class="hover:text-blue-600">Pedido</a></li></ul>
 
@@ -80,9 +80,9 @@
 
             <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
 
-            <li><a href="/administrador" class="hover:text-blue-600">Administradores</a></li>
+            <li><a href="/administrador" class="hover:text-blue-600">Empleado</a></li>
 
-            <li><a href="/cliente" class="hover:text-blue-600">Clientes</a></li>
+            <li><a href="/cliente" class="hover:text-blue-600">Cliente</a></li>
 
             <li><a href="/pedido" class="hover:text-blue-600">Pedido</a></li>
 
@@ -136,7 +136,7 @@
 
         <div class="max-w-7xl mx-auto px-4 text-center text-gray-500">
 
-            © 2026 - Laravel 12 + TailwindCSS
+            © 2026 - 
 
         </div>
 

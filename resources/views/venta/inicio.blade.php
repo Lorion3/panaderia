@@ -34,19 +34,31 @@
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Precio</label>
-                <input type="number" step="0.01"
+                <input type="number"
+                name="precio"
+                min="0"
+                max="9999.99"
+                step="0.01"
                     class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
             </div>
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Impuesto</label>
-                <input type="number" step="0.01"
+                <input type="number"
+                name="impuesto"
+                step="0.01"
+                max="9999.99"
                     class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
             </div>
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Total</label>
-                <input type="number" step="0.01"
+                <input type="number"
+                name="total"
+                min="0"
+                max="9999.99"
+                step="0.01"
+                min
                     class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
             </div>
 
@@ -59,8 +71,12 @@
             </div>
 
             <div class="md:col-span-2 flex justify-end">
+                <a href="/venta/tabla"
+                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
+                        Guardar Venta
+                    </a>
                 <button type="submit"
-                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition">
+                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition">
                     Guardar Venta
                 </button>
             </div>

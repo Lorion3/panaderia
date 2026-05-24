@@ -23,7 +23,12 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Nombre
                 </label>
+
                 <input type="text"
+                    name="nombre"
+                    maxlength="50"
+                    required
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -33,6 +38,10 @@
                     Apellido
                 </label>
                 <input type="text"
+                    name="apellido"
+                    maxlength="50"
+                    required
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -42,6 +51,10 @@
                     Correo
                 </label>
                 <input type="email"
+                    name="email"
+                    maxlength="150"
+                    required
+                   
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -51,6 +64,10 @@
                     Usuario
                 </label>
                 <input type="text"
+                    name="usuario"
+                    maxlength="50"
+                    required
+                    
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -60,6 +77,9 @@
                     Contraseña
                 </label>
                 <input type="password"
+                    name="contrasena"
+                    maxlength="255"
+                    required
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -69,7 +89,12 @@
                     Teléfono
                 </label>
                 <input type="text"
+                    name="telefono"
                     maxlength="10"
+                    required
+                    min="0"
+                    
+                    pattern="[0-9]{10}"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -109,8 +134,13 @@
 
             <!-- Botón -->
             <div class="md:col-span-2 flex justify-end">
-                <button type="submit"
-                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
+                <a href="/administrador/tabla"
+                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
+                        Guardar Empleado
+                    </a>
+
+                    <button type="submit"
+                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition">
                     Guardar Empleado
                 </button>
             </div>
