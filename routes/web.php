@@ -26,7 +26,7 @@ Route::view('/producto/tabla','/producto/tabla');
 //------------------------------------PROVEEDORES
 Route::view('/proveedor','/proveedor/inicio');
 Route::view('/venta','/venta/inicio');
-Route::view('/carts','/componentes/carts');
+        // Route::view('/carts','/componentes/carts');
 
 Route::view('/proveedor/tabla','/proveedor/tabla');
 //--------------------------------------------------venta

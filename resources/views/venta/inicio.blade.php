@@ -36,6 +36,7 @@
                 <label class="block mb-2 font-semibold text-gray-700">Precio</label>
                 <input type="number"
                 name="precio"
+                required
                 min="0"
                 max="9999.99"
                 step="0.01"
@@ -48,6 +49,7 @@
                 name="impuesto"
                 step="0.01"
                 max="9999.99"
+                required
                     class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
             </div>
 
@@ -56,6 +58,7 @@
                 <input type="number"
                 name="total"
                 min="0"
+                required
                 max="9999.99"
                 step="0.01"
                 min
