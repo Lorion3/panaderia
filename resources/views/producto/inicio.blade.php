@@ -36,7 +36,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Nombre del Producto *
                 </label>
-                <input type="text" name="nombre" required
+                <input type="text"
+                name="nombre"
+                required
+                maxlength="50"
+                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -107,8 +111,12 @@
 
             <!-- Botón -->
             <div class="md:col-span-2 flex justify-end">
+                <a href="/producto/tabla"
+                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
+                        Guardar Producto
+                    </a>
                 <button type="submit"
-                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
+                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
                     Guardar Producto
                 </button>
             </div>

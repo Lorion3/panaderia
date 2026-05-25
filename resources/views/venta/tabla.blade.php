@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-=======
 @extends('/plantilla/base')
-
 @section('dinamico')
+
 
 <div class="max-w-7xl mx-auto p-6">
 
@@ -10,9 +8,9 @@
 
         <!-- Header -->
         <div class="bg-blue-800 text-white px-6 py-4">
-            <h2 class="text-2xl font-bold">Tabla Empleados</h2>
+            <h2 class="text-2xl font-bold">Tabla Ventas</h2>
             <p class="text-blue-100 text-sm">
-                Información de empleados registrados
+                Información de ventas registradas
             </p>
         </div>
 
@@ -24,11 +22,13 @@
                 <thead class="bg-gray-100 uppercase text-xs text-gray-600">
                     <tr>
                         <th class="px-6 py-4">ID</th>
-                        <th class="px-6 py-4">Nombre</th>
-                        <th class="px-6 py-4">Correo</th>
-                        <th class="px-6 py-4">Usuario</th>
-                        <th class="px-6 py-4">Teléfono</th>
-                        <th class="px-6 py-4">Rol</th>
+                        <th class="px-6 py-4">Producto</th>
+                        <th class="px-6 py-4">Empleado</th>
+                        <th class="px-6 py-4">Cliente</th>
+                        <th class="px-6 py-4">Precio</th>
+                        <th class="px-6 py-4">Impuesto</th>
+                        <th class="px-6 py-4">Total</th>
+                        <th class="px-6 py-4">Fecha</th>
                         <th class="px-6 py-4">Estatus</th>
                     </tr>
                 </thead>
@@ -37,28 +37,32 @@
 
                     <tr class="border-b hover:bg-gray-50 transition">
                         <td class="px-6 py-4">1</td>
+                        <td class="px-6 py-4">Laptop HP</td>
                         <td class="px-6 py-4">Juan Pérez</td>
-                        <td class="px-6 py-4">juan@gmail.com</td>
-                        <td class="px-6 py-4">juanp</td>
-                        <td class="px-6 py-4">3312345678</td>
-                        <td class="px-6 py-4">Administrador</td>
+                        <td class="px-6 py-4">Carlos Ruiz</td>
+                        <td class="px-6 py-4">$8500</td>
+                        <td class="px-6 py-4">$1360</td>
+                        <td class="px-6 py-4 font-bold">$9860</td>
+                        <td class="px-6 py-4">2026-05-22</td>
                         <td class="px-6 py-4">
                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                Activo
+                                Realizada
                             </span>
                         </td>
                     </tr>
 
                     <tr class="border-b hover:bg-gray-50 transition">
                         <td class="px-6 py-4">2</td>
+                        <td class="px-6 py-4">Mouse Gamer</td>
                         <td class="px-6 py-4">Ana López</td>
-                        <td class="px-6 py-4">ana@gmail.com</td>
-                        <td class="px-6 py-4">analopez</td>
-                        <td class="px-6 py-4">3322222222</td>
-                        <td class="px-6 py-4">Vendedor</td>
+                        <td class="px-6 py-4">Miguel Torres</td>
+                        <td class="px-6 py-4">$1200</td>
+                        <td class="px-6 py-4">$192</td>
+                        <td class="px-6 py-4 font-bold">$1392</td>
+                        <td class="px-6 py-4">2026-05-22</td>
                         <td class="px-6 py-4">
                             <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                Inactivo
+                                Cancelada
                             </span>
                         </td>
                     </tr>
@@ -73,6 +77,6 @@
 
 </div>
 
+
+
 @endsection
-   
->>>>>>> 6014672c8bcdbab30b18c531fc5923c21874c0d4

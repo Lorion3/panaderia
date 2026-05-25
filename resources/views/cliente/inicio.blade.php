@@ -20,7 +20,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Nombre *
                 </label>
-                <input type="text" name="nombre" required
+                <input type="text"
+                 name="nombre" 
+                 required
+                 maxlength="50"
+                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -29,7 +33,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Apellido Paterno *
                 </label>
-                <input type="text" name="apellido_paterno" required
+                <input type="text"
+                 name="apellido_paterno"
+                 required
+                 maxlength="50"
+                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -38,7 +46,10 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Apellido Materno
                 </label>
-                <input type="text" name="apellido_materno"
+                <input type="text"
+                name="apellido_materno"
+                maxlength="50"
+                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -47,7 +58,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Teléfono *
                 </label>
-                <input type="tel" name="telefono" required maxlength="10"
+                <input type="tel"
+                 name="telefono"
+                required
+                maxlength="10"
+                min="0"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -56,7 +71,10 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Correo *
                 </label>
-                <input type="email" name="correo" required
+                <input type="email"
+                name="correo"
+                required
+                maxlength="150"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -77,7 +95,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Dirección
                 </label>
-                <input type="text" name="direccion"
+                <input type="text" 
+                name="direccion"
+                maxlength="150"
+                required
+                
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -93,8 +115,13 @@
 
             <!-- Botón -->
             <div class="md:col-span-2 flex justify-end">
+                    <a href="/cliente/tabla"
+                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
+                        Guardar Cliente
+                    </a>
+
                 <button type="submit"
-                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
+                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
                     Guardar Cliente
                 </button>
             </div>

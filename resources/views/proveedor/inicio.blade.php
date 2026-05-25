@@ -20,7 +20,12 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Nombre de Contacto *
                 </label>
-                <input type="text" name="contacto" required
+                <input type="text"
+                name="contacto"
+                required
+                maxlength="50"
+                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -29,7 +34,10 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Empresa *
                 </label>
-                <input type="text" name="empresa" required
+                <input type="text"
+                name="empresa"
+                required
+                maxlength="50"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -38,7 +46,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Correo *
                 </label>
-                <input type="email" name="correo" required
+                <input type="email"
+                name="correo"
+                required
+                maxlength="150"
+
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -47,7 +59,12 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Estado
                 </label>
-                <input type="text" name="estado"
+                <input type="text"
+                    name="estado"
+                    required
+                    maxlength="50"
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -56,7 +73,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Ciudad
                 </label>
-                <input type="text" name="ciudad"
+                <input type="text"
+                name="ciudad"
+                maxlength="50"
+                required
+                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -65,7 +86,10 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Colonia
                 </label>
-                <input type="text" name="colonia"
+                <input type="text"
+                name="colonia"
+                maxlength="50"
+                required
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -74,7 +98,10 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Código Postal
                 </label>
-                <input type="text" name="codigo_postal" maxlength="5"
+                <input type="text"
+                name="codigo_postal"
+                maxlength="5"
+                pattern="[0-9]{5}"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -83,7 +110,11 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Calle
                 </label>
-                <input type="text" name="calle"
+                <input type="text"
+                name="calle"
+                required
+                maxlength="100"
+
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -92,7 +123,10 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Número
                 </label>
-                <input type="text" name="numero"
+                <input type="text"
+                name="numero"
+                min="0"
+                
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -108,8 +142,12 @@
 
             <!-- Botón -->
             <div class="md:col-span-2 flex justify-end">
+                <a href="/proveedor/tabla"
+                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
+                        Guardar Proveedor
+                    </a>
                 <button type="submit"
-                    class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
+                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
                     Guardar Proveedor
                 </button>
             </div>
