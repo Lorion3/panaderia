@@ -29,7 +29,7 @@
   
             <ul><a href="/" class="hover:text-blue-600">Inicio</a></ul>
 
-            <ul><a href="/administrador" class="hover:text-blue-600">Empleado</a></ul>
+            <ul><a href="/empleado" class="hover:text-blue-600">Empleado</a></ul>
 
             <ul><a href="/cliente" class="hover:text-blue-600">Cliente</a></ul>
 
@@ -80,7 +80,7 @@
 
             <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
 
-            <li><a href="/administrador" class="hover:text-blue-600">Empleado</a></li>
+            <li><a href="/empleado" class="hover:text-blue-600">Empleado</a></li>
 
             <li><a href="/cliente" class="hover:text-blue-600">Cliente</a></li>
 

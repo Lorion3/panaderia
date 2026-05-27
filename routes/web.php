@@ -11,9 +11,9 @@ Route::view('/cliente/tabla','/cliente/tabla');
 //eror 404, carpeta no escrita correcta
 //error más complejo es por la raiz
 //----------------------------------EMPLEADOS
-Route::view('/administrador','/administrador/inicio');
+Route::view('/empleado','/empleado/inicio');
 
-Route::view('/administrador/tabla','/administrador/tabla');
+Route::view('/empleado/tabla','/empleado/tabla');
 //-----------------------------PEDIDOS
 Route::view('/pedido','/pedido/inicio');
 
