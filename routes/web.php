@@ -4,17 +4,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/','inicio');
-//-------------------------------------CLIENTES
 Route::view('/cliente','/cliente/inicio');
 
 Route::view('/cliente/tabla','/cliente/tabla');
-//carpeta y la raiz a donde quiero entrar
-//eror 404, carpeta no escrita correcta
-//error más complejo es por la raiz
-//----------------------------------EMPLEADOS
+
 Route::view('/empleado','/administrador/inicio');
 
-Route::view('/administrador/tabla','/administrador/tabla');
+Route::view('/empleado','/empleado/inicio');
+
+
+Route::view('/empleado/tabla','/empleado/tabla');
 //-----------------------------PEDIDOS
 Route::view('/pedido','/pedido/inicio');
 

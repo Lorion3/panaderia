@@ -47,6 +47,7 @@
                 <label class="block mb-2 font-semibold text-gray-700">Impuesto</label>
                 <input type="number"
                 name="impuesto"
+                required
                 step="0.01"
                 max="9999.99"
                 required
