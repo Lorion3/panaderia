@@ -66,6 +66,7 @@
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
+        <div class= login name="login" class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             <!-- Correo -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
@@ -77,6 +78,17 @@
                 maxlength="150"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
+               <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Contraseña
+                </label>
+                <input type="password"
+                    name="contrasena"
+                    maxlength="255"
+                    required
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+            </div>
+        </div>
 
             <!-- Estatus -->
             <div>
@@ -117,7 +129,7 @@
             <div class="md:col-span-2 flex justify-end">
                     <a href="/cliente/tabla"
                         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
-                        Guardar Cliente
+                     Clistes registrados
                     </a>
 
                 <button type="submit"

@@ -1,4 +1,4 @@
-@extends('/plantilla/base')
+                    </a>@extends('/plantilla/base')
 
 @section('dinamico')
 
@@ -9,7 +9,7 @@
     
     <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
         
-        <!-- Header -->
+      
         <div class="bg-blue-800 text-white px-6 py-4">
             <h2 class="text-2xl font-bold">Registrar Empleado</h2>
             <p class="text-blue-100 text-sm">Completa la información del empleado</p>
@@ -136,7 +136,7 @@
             <div class="md:col-span-2 flex justify-end">
                 <a href="/administrador/tabla"
                         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
-                        Guardar Empleado
+                    Lista de empleados
                     </a>
 
                     <button type="submit"

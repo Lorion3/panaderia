@@ -1,7 +1,44 @@
 @extends('/plantilla/base')
 
 @section('dinamico')
+<!DOCTYPE html>
+<html lang="en">
+<header class="bg-blue-600 text-white py-10 shadow">
 
-         <h1>INICIO DEL SITIO</h1>
+        <div class="max-w-7xl mx-auto px-4">
+
+            <h1 class="text-4xl font-bold">
+                @yield('header', 'Panel Principal')
+            </h1>
+
+            <img src="https://thumbs.dreamstime.com/b/plantilla-de-banner-pan-fresco-publicidad-en-panader%C3%ADa-horizontal-aislada-fondo-blanco-238177193.jpg" alt="baner" style="width: 100%; height: auto; margin-top: 20px; border-radius: 10px;">
+
+        </div>
+
+    </header>
+<body>
+    
+</body>
+</html>
+ 
+
+    <a href="/administrador/tabla"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver Empleados
+    </a>
+     <a href="/administrador/tabla"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver Productos    
+    </a> <a href="/proveedor/tabla"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver proveedores
+    </a>  <a href="/venta/tabla"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver ventas
+    
+    </a> <a href="/pedido/tabla"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver pedidos
+    </a>
 
 @endsection

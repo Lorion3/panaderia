@@ -45,6 +45,9 @@
                         <td class="px-6 py-4 font-bold">$9860</td>
                         <td class="px-6 py-4">2026-05-22</td>
                         <td class="px-6 py-4">
+                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
+                                 <a href="/venta/detalle">detalle de venta</a>
+                            </span>
                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
                                 Realizada
                             </span>
@@ -61,6 +64,10 @@
                         <td class="px-6 py-4 font-bold">$1392</td>
                         <td class="px-6 py-4">2026-05-22</td>
                         <td class="px-6 py-4">
+                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
+                               <a href="/venta/detalle">detalle de venta</a>
+                                
+                            </span>
                             <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
                                 Cancelada
                             </span>

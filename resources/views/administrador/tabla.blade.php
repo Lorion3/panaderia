@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 @extends('/plantilla/base')
 
 @section('dinamico')
@@ -75,4 +74,3 @@
 
 @endsection
    
->>>>>>> 6014672c8bcdbab30b18c531fc5923c21874c0d4
