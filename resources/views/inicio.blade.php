@@ -22,21 +22,21 @@
 </html>
  
 
-    <a href="/administrador/tabla"
+    <a href="/empleado/lista"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver Empleados
     </a>
-     <a href="/administrador/tabla"
+     <a href="/producto/lista"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver Productos    
-    </a> <a href="/proveedor/tabla"
+    </a> <a href="/proveedor/lista"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver proveedores
-    </a>  <a href="/venta/tabla"
+    </a>  <a href="/venta/lista"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver ventas
     
-    </a> <a href="/pedido/tabla"
+    </a> <a href="/pedido/lista"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver pedidos
     </a>

@@ -13,7 +13,7 @@
                 Información de detalle de ventas registrados 
             </p>
              <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                <a href="/venta/tabla">Regresar a tabla de ventas</a>
+                                <a href="/venta/lista">Regresar a lista de ventas</a>
                             </span>
         </div>
 

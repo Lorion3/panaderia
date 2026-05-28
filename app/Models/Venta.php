@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Venta extends Model
 {
     //
-<<<<<<< HEAD
     public $timestamps = false;
-=======
-    public $timestamos = false;
->>>>>>> 1625d6f1af05b39ee934ae9da5d18f660d568757
+    function Detalle_venta(){
+        return $this->hasMany(Detalle_venta::class,'id_venta');
+    }
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class, 'cliente_id');
+    }
 }

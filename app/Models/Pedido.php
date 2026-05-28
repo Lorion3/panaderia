@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     //
-<<<<<<< HEAD
-    public $timestamps = false;
-=======
     public $timestamos = false;
->>>>>>> 1625d6f1af05b39ee934ae9da5d18f660d568757
+    function Provedor(){
+        return $this->hasMany(Proveedor::class,'proveedor_id');
+    }
 }
