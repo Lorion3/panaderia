@@ -13,7 +13,7 @@
                 Información de pedidos registrados
             </p>
              <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                <a href="/pedido/tabla">Regresar a tabla de pedidos</a>
+                                <a href="/pedido/lista">Regresar a lista de pedidos</a>
                             </span>
         </div>
 
@@ -51,9 +51,7 @@
                              <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
                                  <a href="/venta/detalle">detalle de venta</a>
                             </span>
-                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                Realizada
-                            </span>
+                           
                         </td>
                     </tr>
 
@@ -68,8 +66,8 @@
                         <td class="px-6 py-4">2026-05-22</td>
                         <td class="px-6 py-4">
                            
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                Cancelada
+                              <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
+                                 <a href="/venta/detalle">detalle de venta</a>
                             </span>
                         </td>
                     </tr>

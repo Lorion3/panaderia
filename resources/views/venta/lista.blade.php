@@ -48,9 +48,7 @@
                              <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
                                  <a href="/venta/detalle">detalle de venta</a>
                             </span>
-                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                Realizada
-                            </span>
+                           
                         </td>
                     </tr>
 
@@ -68,9 +66,7 @@
                                <a href="/venta/detalle">detalle de venta</a>
                                 
                             </span>
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                Cancelada
-                            </span>
+                          
                         </td>
                     </tr>
 

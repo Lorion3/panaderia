@@ -127,9 +127,9 @@
 
             <!-- Botón -->
             <div class="md:col-span-2 flex justify-end">
-                    <a href="/cliente/tabla"
+                    <a href="/cliente/lista"
                         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
-                     Clistes registrados
+                     Clientes registrados
                     </a>
 
                 <button type="submit"

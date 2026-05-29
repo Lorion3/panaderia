@@ -8,4 +8,9 @@ class Cliente extends Model
 {
     //
     public $timestamps = false;
+    function Venta(){
+        return $this->hasMany(Venta::class,'cliente_id');
+    }
+
+    
 }
