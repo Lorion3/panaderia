@@ -22,11 +22,11 @@
 </html>
  
 
-    <a href="/administrador/tabla"
+    <a href="/empleado/tabla"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver Empleados
     </a>
-     <a href="/administrador/tabla"
+     <a href="/producto/tabla"
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver Productos    
     </a> <a href="/proveedor/tabla"

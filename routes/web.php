@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EmpleadoController;
 
 Route::view('/','inicio');
 Route::view('/cliente','/cliente/inicio');
 
 Route::view('/cliente/tabla','/cliente/tabla');
+//___________________________________________________
+//Route::view('/empleado','/empleado/inicio');
 
-Route::view('/empleado','/administrador/inicio');
-
-Route::view('/empleado','/empleado/inicio');
+//Route::view('/empleado','/empleado/inicio');
 
 
-Route::view('/empleado/tabla','/empleado/tabla');
+//Route::view('/empleado/tabla','/empleado/tabla');
 //-----------------------------PEDIDOS
 Route::view('/pedido','/pedido/inicio');
 
@@ -34,3 +34,5 @@ Route::view('venta','/venta/inicio');
 Route::view('venta/tabla','/venta/tabla');
 Route::view('venta/detalle','/venta/detalle');
 ROute::view('pedido/detalle','/pedido/detalle');
+
+Route::get('/empleado/tabla', [EmpleadoController::class, 'listado']);

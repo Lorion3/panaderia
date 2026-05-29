@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Detalle_pedido extends Model
+class Detalle_Pedido extends Model
 {
     //
-    protected $table = 'detalle_ventas';
+    protected $table = 'detalle_pedidos';
     public $timestamps = false;
 }
