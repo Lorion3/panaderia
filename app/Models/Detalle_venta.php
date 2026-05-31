@@ -3,14 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Detalle_Venta extends Model
 {
-
+use HasFactory;
     protected $table = 'detalle_ventas'; 
     public $timestamps = false;
+protected $fillable = [
+    'venta_id',
+    'producto_id',
+    'empleado_id',
+    'impuesto',
+    'cantidad',
+    'precio',
+    'descuento'
+];
 
-    function Venta(){
+    public function venta(){
         return $this->belongsTo(Venta::class,'venta_id');
     }
 

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Pedido;
 class PedidoController extends Controller
 {
     //
     public function listado() {
-    return view('pedido/lista');
+    $pedidos = Pedido::all();
+    return view('pedido/lista', compact('pedidos'));
 }
 
 public function detalle() {

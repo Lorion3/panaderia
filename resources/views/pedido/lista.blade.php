@@ -35,35 +35,18 @@
 
                 <tbody>
 
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">1</td>
-                        <td class="px-6 py-4">Tech Supplier</td>
-                        <td class="px-6 py-4">25</td>
-                        <td class="px-6 py-4">$3000</td>
-                        <td class="px-6 py-4">$480</td>
-                        <td class="px-6 py-4 font-bold">$3480</td>
-                        <td class="px-6 py-4">2026-05-22</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                               <a href="/pedido/detalle">ver detalle de pedido</a>
-                            </span>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">2</td>
-                        <td class="px-6 py-4">Global Parts</td>
-                        <td class="px-6 py-4">10</td>
-                        <td class="px-6 py-4">$1500</td>
-                        <td class="px-6 py-4">$240</td>
-                        <td class="px-6 py-4 font-bold">$1740</td>
-                        <td class="px-6 py-4">2026-05-22</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                <a href="/pedido/detalle">ver detalle de pedido</a>
-                            </span>
-                        </td>
-                    </tr>
+                @foreach($pedidos as $pedido)
+<tr class="border-b hover:bg-gray-50 transition">
+    <td class="px-6 py-4">{{ $pedido->id }}</td>
+    <td class="px-6 py-4">{{ $pedido->proveedor->nombre }}</td>
+    <td class="px-6 py-4">{{ $pedido->cantidad }}</td>
+    <td class="px-6 py-4">{{ $pedido->precio }}</td>
+    <td class="px-6 py-4">{{ $pedido->impuesto }}</td>
+    <td class="px-6 py-4">{{ $pedido->total }}</td> 
+    <td class="px-6 py-4">{{ $pedido->fecha }}</td>
+    <td class="px-6 py-4">{{ $pedido->estatus }}</td>
+</tr>
+@endforeach
 
                 </tbody>
 

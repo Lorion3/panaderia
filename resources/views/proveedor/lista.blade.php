@@ -32,27 +32,17 @@
                 </thead>
 
                 <tbody>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">1</td>
-                        <td class="px-6 py-4">Tech Supplier</td>
-                        <td class="px-6 py-4">Luis Gómez</td>
-                        <td class="px-6 py-4">proveedor@gmail.com</td>
-                        <td class="px-6 py-4">Jalisco</td>
-                        <td class="px-6 py-4">Guadalajara</td>
-                        <td class="px-6 py-4">Av. Vallarta #450</td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">2</td>
-                        <td class="px-6 py-4">Global Parts</td>
-                        <td class="px-6 py-4">María Torres</td>
-                        <td class="px-6 py-4">global@gmail.com</td>
-                        <td class="px-6 py-4">CDMX</td>
-                        <td class="px-6 py-4">Ciudad de México</td>
-                        <td class="px-6 py-4">Reforma #900</td>
-                    </tr>
-
+                @foreach($proveedores as $proveedor)
+                <tr class="border-b hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">{{ $proveedor->id }}</td>
+                    <td class="px-6 py-4">{{ $proveedor->empresa }}</td>
+                    <td class="px-6 py-4">{{ $proveedor->contacto }}</td>
+                    <td class="px-6 py-4">{{ $proveedor->correo }}</td>
+                    <td class="px-6 py-4">{{ $proveedor->estado }}</td>
+                    <td class="px-6 py-4">{{ $proveedor->ciudad }}</td>
+                    <td class="px-6 py-4">{{ $proveedor->direccion }}</td>
+                </tr>
+                @endforeach
                 </tbody>
 
             </table>

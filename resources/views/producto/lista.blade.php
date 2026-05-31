@@ -34,35 +34,18 @@
 
                 <tbody>
 
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">1</td>
-                        <td class="px-6 py-4">Tech Supplier</td>
-                        <td class="px-6 py-4">Laptop HP</td>
-                        <td class="px-6 py-4">Electrónica</td>
-                        <td class="px-6 py-4">$8500</td>
-                        <td class="px-6 py-4">12</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                Disponible
-                            </span>
-                        </td>
-                        <td class="px-6 py-4">Laptop para oficina</td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">2</td>
-                        <td class="px-6 py-4">Global Parts</td>
-                        <td class="px-6 py-4">Mouse Gamer</td>
-                        <td class="px-6 py-4">Accesorios</td>
-                        <td class="px-6 py-4">$1200</td>
-                        <td class="px-6 py-4">30</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                Agotado
-                            </span>
-                        </td>
-                        <td class="px-6 py-4">Mouse RGB gamer</td>
-                    </tr>
+                @foreach($productos as $producto)
+<tr class="border-b hover:bg-gray-50 transition">
+    <td class="px-6 py-4">{{ $producto->id }}</td>
+    <td class="px-6 py-4">{{ $producto->proveedor_id }}</td>
+    <td class="px-6 py-4">{{ $producto->nombre }}</td>
+    <td class="px-6 py-4">{{ $producto->categoria }}</td>
+    <td class="px-6 py-4">{{ $producto->precio }}</td>
+    <td class="px-6 py-4">{{ $producto->existencia }}</td>
+    <td class="px-6 py-4">{{ $producto->estatus }}</td>
+    <td class="px-6 py-4">{{ $producto->descripcion }}</td>
+</tr>
+@endforeach
 
                 </tbody>
 

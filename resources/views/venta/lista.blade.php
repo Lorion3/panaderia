@@ -34,42 +34,19 @@
                 </thead>
 
                 <tbody>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">1</td>
-                        <td class="px-6 py-4">Laptop HP</td>
-                        <td class="px-6 py-4">Juan Pérez</td>
-                        <td class="px-6 py-4">Carlos Ruiz</td>
-                        <td class="px-6 py-4">$8500</td>
-                        <td class="px-6 py-4">$1360</td>
-                        <td class="px-6 py-4 font-bold">$9860</td>
-                        <td class="px-6 py-4">2026-05-22</td>
-                        <td class="px-6 py-4">
-                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                 <a href="/venta/detalle">detalle de venta</a>
-                            </span>
-                           
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">2</td>
-                        <td class="px-6 py-4">Mouse Gamer</td>
-                        <td class="px-6 py-4">Ana López</td>
-                        <td class="px-6 py-4">Miguel Torres</td>
-                        <td class="px-6 py-4">$1200</td>
-                        <td class="px-6 py-4">$192</td>
-                        <td class="px-6 py-4 font-bold">$1392</td>
-                        <td class="px-6 py-4">2026-05-22</td>
-                        <td class="px-6 py-4">
-                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                               <a href="/venta/detalle">detalle de venta</a>
-                                
-                            </span>
-                          
-                        </td>
-                    </tr>
-
+                @foreach($ventas as $venta)
+<tr class="border-b hover:bg-gray-50 transition">
+    <td class="px-6 py-4">{{ $venta->id }}</td>
+    <td class="px-6 py-4">{{ $venta->producto_id }}</td>
+    <td class="px-6 py-4">{{ $venta->empleado_id }}</td>
+    <td class="px-6 py-4">{{ $venta->cliente->nombre }}</td>
+    <td class="px-6 py-4">{{ $venta->precio }}</td>
+    <td class="px-6 py-4">{{ $venta->impuesto }}</td>
+    <td class="px-6 py-4">{{ $venta->total }}</td>
+    <td class="px-6 py-4">{{ $venta->fecha }}</td>
+    <td class="px-6 py-4">{{ $venta->estatus }}</td>
+</tr>
+@endforeach
                 </tbody>
 
             </table>

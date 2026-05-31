@@ -32,34 +32,31 @@
                 </thead>
 
                 <tbody>
+                @foreach($clientes as $cliente)
 
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">1</td>
-                        <td class="px-6 py-4">Carlos</td>
-                        <td class="px-6 py-4">Ruiz López</td>
-                        <td class="px-6 py-4">3312345678</td>
-                        <td class="px-6 py-4">carlos@gmail.com</td>
-                        <td class="px-6 py-4">Av. México #120</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                Activo
-                            </span>
-                        </td>
-                    </tr>
+<tr class="border-b hover:bg-gray-50 transition">
 
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">2</td>
-                        <td class="px-6 py-4">Ana</td>
-                        <td class="px-6 py-4">Martínez Torres</td>
-                        <td class="px-6 py-4">3322222222</td>
-                        <td class="px-6 py-4">ana@gmail.com</td>
-                        <td class="px-6 py-4">Calle Juárez #55</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                Inactivo
-                            </span>
-                        </td>
-                    </tr>
+    <td class="px-6 py-4">{{ $cliente->id }}</td>
+
+    <td class="px-6 py-4">{{ $cliente->nombre }}</td>
+
+    <td class="px-6 py-4">
+        {{ $cliente->apellido_paterno }}
+        {{ $cliente->apellido_materno }}
+    </td>
+
+    <td class="px-6 py-4">{{ $cliente->telefono }}</td>
+
+    <td class="px-6 py-4">{{ $cliente->correo }}</td>
+
+    <td class="px-6 py-4">{{ $cliente->direccion }}</td>
+
+    <td class="px-6 py-4">{{ $cliente->estatus }}</td>
+
+</tr>
+
+@endforeach
+    
 
                 </tbody>
 

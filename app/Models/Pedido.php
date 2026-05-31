@@ -3,13 +3,30 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Pedido extends Model
 {
-    //
-    public $timestamos = false;
-    function Provedor(){
-        return $this->hasMany(Proveedor::class,'proveedor_id');
+    use HasFactory;
+    protected $casts = [
+    'fecha' => 'datetime'
+];
+    protected $fillable = [
+    'proveedor_id',
+    'empleado_id',
+    'fecha',
+    'total',
+    'estatus'
+];
+
+    
+
+    public $timestamps = false;
+    public function proveedor(){
+        return $this->belongsTo(Proveedor::class,'proveedor_id');
     }
 
     public function detalle_pedidos()

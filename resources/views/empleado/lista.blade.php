@@ -33,35 +33,17 @@
                 </thead>
 
                 <tbody>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">1</td>
-                        <td class="px-6 py-4">Juan Pérez</td>
-                        <td class="px-6 py-4">juan@gmail.com</td>
-                        <td class="px-6 py-4">juanp</td>
-                        <td class="px-6 py-4">3312345678</td>
-                        <td class="px-6 py-4">Administrador</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs">
-                                Activo
-                            </span>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b hover:bg-gray-50 transition">
-                        <td class="px-6 py-4">2</td>
-                        <td class="px-6 py-4">Ana López</td>
-                        <td class="px-6 py-4">ana@gmail.com</td>
-                        <td class="px-6 py-4">analopez</td>
-                        <td class="px-6 py-4">3322222222</td>
-                        <td class="px-6 py-4">Vendedor</td>
-                        <td class="px-6 py-4">
-                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
-                                Inactivo
-                            </span>
-                        </td>
-                    </tr>
-
+                @foreach($empleados as $empleado)   
+<tr class="border-b hover:bg-gray-50 transition">
+    <td class="px-6 py-4">{{ $empleado->id }}</td>
+    <td class="px-6 py-4">{{ $empleado->nombre }}</td>
+    <td class="px-6 py-4">{{ $empleado->correo }}</td>
+    <td class="px-6 py-4">{{ $empleado->usuario }}</td>
+    <td class="px-6 py-4">{{ $empleado->telefono }}</td>
+    <td class="px-6 py-4">{{ $empleado->rol }}</td>
+    <td class="px-6 py-4">{{ $empleado->estatus }}</td>
+</tr>
+@endforeach
                 </tbody>
 
             </table>
