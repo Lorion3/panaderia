@@ -17,8 +17,10 @@
 
         <!-- Body -->
         <form method="POST" action="/empleado/guardar" enctype="multipart/form-data"
-        class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-        @csrf
+         class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+         @csrf()
+
+
 
             <!-- Nombre -->
             <div>
@@ -106,6 +108,7 @@
                     Rol
                 </label>
                 <select
+                    name="rol"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
                     <option>Administrador</option>
                     <option>Vendedor</option>
@@ -119,6 +122,7 @@
                     Estatus
                 </label>
                 <select
+                name="estatus"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
                     <option>Activo</option>
                     <option>Inactivo</option>
@@ -131,6 +135,7 @@
                     Imagen
                 </label>
                 <input type="file"
+                name="imagen"
                     class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
             </div>
 

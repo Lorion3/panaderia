@@ -32,6 +32,7 @@ use App\Http\Controllers\InicioController;
 //--------------------------------------------------->Controlladores<--------------------------------------------------
 Route::get('/empleado/lista', [EmpleadoController::class, 'listado']);
 Route::get('/empleado', [EmpleadoController::class, 'inicio']);
+Route::post('/empleado/guardar', [EmpleadoController::class, 'guardar']);
 
 Route::get('/venta/lista', [VentaController::class, 'listado']);
 Route::get('/venta/detalle', [VentaController::class, 'detalle']);
@@ -42,12 +43,16 @@ Route::get('/producto', [ProductoController::class, 'inicio']);
 
 Route::get('/proveedor/lista', [ProveedorController::class, 'listado']);
 Route::get('/proveedor', [ProveedorController::class, 'inicio']);
+Route::post('/proveedor/guardar', [ProveedorController::class, 'guardar']);
 
 Route::get('/cliente/lista', [ClienteController::class, 'listado']);
 Route::get('/cliente', [ClienteController::class, 'inicio']);
+Route::post('/cliente/guardar', [ClienteController::class, 'guardar']);
 
 Route::get('/pedido/lista', [PedidoController::class, 'listado']);
 Route::get('/pedido/detalle', [PedidoController::class, 'detalle']);
 Route::get('/pedido', [PedidoController::class, 'inicio']);
 
 Route::get('/', [InicioController::class, 'inicio']);
+
+

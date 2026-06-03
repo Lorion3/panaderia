@@ -13,7 +13,9 @@
         </div>
 
         <!-- Body -->
-        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form method="POST" action="/proveedor/guardar" enctype="multipart/form-data"
+         class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            @csrf()
 
             <!-- Contacto -->
             <div>

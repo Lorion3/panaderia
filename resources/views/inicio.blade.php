@@ -42,5 +42,9 @@
         class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Ver pedidos
     </a>
+      </a> <a href="/cliente/lista"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver clientes
+    </a>
 
 @endsection
