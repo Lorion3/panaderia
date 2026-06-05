@@ -16,8 +16,25 @@
                 <label class="block mb-2 font-semibold text-gray-700">
                     Proveedor
                 </label>
-                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
-                    <option>Seleccionar proveedor</option>
+                <select name="proveedor_id" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+                   @foreach($proveedores as $proveedor)
+                    <option value="{{ $proveedor->id }}">{{ $proveedor->contacto }}</option>
+                   
+                   @endforeach
+                    {{-- <option>Seleccionar proveedor</option>
+                    <option value="1">Harinas SA</option>
+                    <option value="2">Lacteos MX</option>
+                 <option value="3">Azucarera</option> --}}
+                </select>
+            </div>
+              <div>
+                <label class="block mb-2 font-semibold text-gray-700">
+                    vendedor
+                </label>
+                <select name="empleado_id" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-blue-700 focus:ring-blue-200">
+                   @foreach($empleados as $empleado)
+                    <option value="{{ $empleado->id }}">{{ $empleado->nombre }}</option>
+                   @endforeach
                 </select>
             </div>
 

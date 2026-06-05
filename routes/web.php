@@ -41,6 +41,8 @@ Route::get('/venta', [VentaController::class, 'inicio']);
 Route::get('/producto/lista', [ProductoController::class, 'listado']);
 Route::get('/producto', [ProductoController::class, 'inicio']);
 
+Route::view('/api/inicio','/api/api');
+
 Route::get('/proveedor/lista', [ProveedorController::class, 'listado']);
 Route::get('/proveedor', [ProveedorController::class, 'inicio']);
 Route::post('/proveedor/guardar', [ProveedorController::class, 'guardar']);

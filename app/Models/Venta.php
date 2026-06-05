@@ -18,6 +18,7 @@ protected $fillable = [
     'cliente_id',
     'total',
     'fecha',
+    'vendedor_id',
     'estatus'
 ];
     public $timestamps = false;

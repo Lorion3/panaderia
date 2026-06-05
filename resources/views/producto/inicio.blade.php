@@ -20,21 +20,26 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Proveedor *
                 </label>
+                
                 <select name="proveedor_id" required
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                    <option value="">Seleccione un proveedor</option>
+                   @foreach($proveedores as $proveedor)
+                    <option value="{{ $proveedor->id }}">{{ $proveedor->contacto }}</option>
+                    @endforeach
+                    {{-- <option value="">Seleccione un proveedor</option>
                     <option value="1">Harinas SA</option>
                     <option value="2">Lacteos MX</option>
                     <option value="3">Azucarera</option>
                     <option value="4">Chocolate Plus</option>
                     <option value="5">Frutas Fresh</option>
+                    <option value="6">Nueces y Semillas </option> --}}
                 </select>
             </div>
 
             <!-- Nombre del Producto -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Nombre del Producto *
+                    Nombre del Producto *   
                 </label>
                 <input type="text"
                 name="nombre"
@@ -73,7 +78,7 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Existencia *
                 </label>
-                <input type="number" name="existencia" required min="0"
+                <input type="number" name="stock" required min="0"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -104,7 +109,23 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Imagen del Producto
                 </label>
-                <input type="file" name="imagen" accept="image/*"
+                <input type="file" name="imagen1" accept="image/*"
+                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
+                <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
+            </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Imagen del Producto 2
+                </label>
+                <input type="file" name="imagen2" accept="image/*"
+                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
+                <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
+            </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Imagen del Producto 3
+                </label>
+                <input type="file" name="imagen3" accept="image/*"
                     class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
                 <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
             </div>

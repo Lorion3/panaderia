@@ -14,21 +14,29 @@
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Producto</label>
                 <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    <option>Seleccionar producto</option>
+                
+                        @foreach($productos as $producto)
+                            <option value="{{ $producto->id }}">{{ $producto->nombre }}</option>
+                        @endforeach
+                  
                 </select>
             </div>
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Empleado</label>
                 <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    <option>Seleccionar empleado</option>
+                    @foreach($empleados as $empleado)
+                        <option value="{{ $empleado->id }}">{{ $empleado->nombre }}</option>
+                    @endforeach
                 </select>
             </div>
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Cliente</label>
                 <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    <option>Seleccionar cliente</option>
+                    @foreach($clientes as $cliente)
+                        <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -68,7 +76,7 @@
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Estatus</label>
-                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
+                <select name="status" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
                     <option>Realizada</option>
                     <option>Cancelada</option>
                 </select>
