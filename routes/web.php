@@ -37,9 +37,11 @@ Route::post('/empleado/guardar', [EmpleadoController::class, 'guardar']);
 Route::get('/venta/lista', [VentaController::class, 'listado']);
 Route::get('/venta/detalle', [VentaController::class, 'detalle']);
 Route::get('/venta', [VentaController::class, 'inicio']);
+Route::post('/venta/guardar', [VentaController::class, 'guardar']);
 
 Route::get('/producto/lista', [ProductoController::class, 'listado']);
 Route::get('/producto', [ProductoController::class, 'inicio']);
+Route::post('/producto/guardar', [ProductoController::class, 'guardar']);
 
 Route::view('/api/inicio','/api/api');
 
@@ -54,6 +56,7 @@ Route::post('/cliente/guardar', [ClienteController::class, 'guardar']);
 Route::get('/pedido/lista', [PedidoController::class, 'listado']);
 Route::get('/pedido/detalle', [PedidoController::class, 'detalle']);
 Route::get('/pedido', [PedidoController::class, 'inicio']);
+Route::post('/pedido/guardar', [PedidoController::class, 'guardar']);
 
 Route::get('/', [InicioController::class, 'inicio']);
 

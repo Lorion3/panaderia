@@ -13,7 +13,8 @@
         </div>
 
         <!-- Body -->
-        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form method="POST" action="{{ url('/producto/guardar') }}" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            @csrf
 
             <!-- Proveedor -->
             <div>
@@ -45,7 +46,7 @@
                 name="nombre"
                 required
                 maxlength="50"
-                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+               
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
@@ -78,7 +79,7 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Existencia *
                 </label>
-                <input type="number" name="stock" required min="0"
+                <input type="number" name="existencia" required min="0"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 

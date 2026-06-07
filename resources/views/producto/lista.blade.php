@@ -23,6 +23,7 @@
                     <tr>
                         <th class="px-6 py-4">ID</th>
                         <th class="px-6 py-4">Proveedor</th>
+                        <th class="px-6 py-4">Empresa</th>
                         <th class="px-6 py-4">Nombre</th>
                         <th class="px-6 py-4">Categoría</th>
                         <th class="px-6 py-4">Precio</th>
@@ -33,11 +34,11 @@
                 </thead>
 
                 <tbody>
-
-                @foreach($productos as $producto)
+@foreach($productos as $producto)
 <tr class="border-b hover:bg-gray-50 transition">
     <td class="px-6 py-4">{{ $producto->id }}</td>
-    <td class="px-6 py-4">{{ $producto->proveedor_id }}</td>
+    <td class="px-6 py-4">{{ $producto->proveedor->contacto }}</td>
+    <td class="px-6 py-4">{{ $producto->proveedor->empresa }}</td>
     <td class="px-6 py-4">{{ $producto->nombre }}</td>
     <td class="px-6 py-4">{{ $producto->categoria }}</td>
     <td class="px-6 py-4">{{ $producto->precio }}</td>

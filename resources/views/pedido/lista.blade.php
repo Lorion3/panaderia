@@ -35,13 +35,15 @@
 
                 <tbody>
 
-                @foreach($pedidos as $pedido)
+       @foreach($pedidos as $pedido)
 <tr class="border-b hover:bg-gray-50 transition">
     <td class="px-6 py-4">{{ $pedido->id }}</td>
-    <td class="px-6 py-4">{{ $pedido->proveedor->nombre }}</td>
-    <td class="px-6 py-4">{{ $pedido->cantidad }}</td>
-    <td class="px-6 py-4">{{ $pedido->precio }}</td>
-    <td class="px-6 py-4">{{ $pedido->impuesto }}</td>
+    <td class="px-6 py-4">{{ $pedido->proveedor->contacto }}</td>
+    <td class="px-6 py-4">
+        @foreach($pedido->detalle_pedidos as $detalle)
+            {{ $detalle->cantidad }} productos<br>
+        @endforeach
+    </td>
     <td class="px-6 py-4">{{ $pedido->total }}</td> 
     <td class="px-6 py-4">{{ $pedido->fecha }}</td>
     <td class="px-6 py-4">{{ $pedido->estatus }}</td>

@@ -37,11 +37,8 @@
                 @foreach($ventas as $venta)
 <tr class="border-b hover:bg-gray-50 transition">
     <td class="px-6 py-4">{{ $venta->id }}</td>
-    <td class="px-6 py-4">{{ $venta->producto_id }}</td>
     <td class="px-6 py-4">{{ $venta->empleado_id }}</td>
     <td class="px-6 py-4">{{ $venta->cliente->nombre }}</td>
-    <td class="px-6 py-4">{{ $venta->precio }}</td>
-    <td class="px-6 py-4">{{ $venta->impuesto }}</td>
     <td class="px-6 py-4">{{ $venta->total }}</td>
     <td class="px-6 py-4">{{ $venta->fecha }}</td>
     <td class="px-6 py-4">{{ $venta->estatus }}</td>

@@ -22,14 +22,14 @@ public function inicio() {
     return view('producto/inicio', compact('proveedores'));
 }
 public function guardar(Request $request) {
-    dd($request->all());
+    // dd($request->all());
     $producto = new Producto();
     $producto->nombre = $request->input('nombre');
     
     $producto->proveedor_id = $request->input('proveedor_id');
     $producto->descripcion = $request->input('descripcion');
     $producto->precio = $request->input('precio');
-    $producto->existencia = $request->input('stock');
+    $producto->existencia = $request->input('existencia');
     $producto->estatus = $request->input('estatus');
     $producto->categoria = $request->input('categoria');
     $producto->imagen1 = $request->input('imagen1');

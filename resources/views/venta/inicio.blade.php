@@ -9,57 +9,25 @@
             <h2 class="text-2xl font-bold">Registrar Venta</h2>
         </div>
 
-        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form method="POST" action="{{ url('/venta/guardar') }}" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            @csrf
 
-            <div>
-                <label class="block mb-2 font-semibold text-gray-700">Producto</label>
-                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                
-                        @foreach($productos as $producto)
-                            <option value="{{ $producto->id }}">{{ $producto->nombre }}</option>
-                        @endforeach
-                  
-                </select>
-            </div>
-
-            <div>
+            {{-- <div>
                 <label class="block mb-2 font-semibold text-gray-700">Empleado</label>
-                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
+                <select name="empleado_id" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
                     @foreach($empleados as $empleado)
                         <option value="{{ $empleado->id }}">{{ $empleado->nombre }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Cliente</label>
-                <select class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
+                <select name="cliente_id" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
                     @foreach($clientes as $cliente)
                         <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
                     @endforeach
                 </select>
-            </div>
-
-            <div>
-                <label class="block mb-2 font-semibold text-gray-700">Precio</label>
-                <input type="number"
-                name="precio"
-                required
-                min="0"
-                max="9999.99"
-                step="0.01"
-                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-            </div>
-
-            <div>
-                <label class="block mb-2 font-semibold text-gray-700">Impuesto</label>
-                <input type="number"
-                name="impuesto"
-                required
-                step="0.01"
-                max="9999.99"
-                required
-                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
             </div>
 
             <div>
@@ -70,15 +38,14 @@
                 required
                 max="9999.99"
                 step="0.01"
-                min
-                    class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
+                class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
             </div>
 
             <div>
                 <label class="block mb-2 font-semibold text-gray-700">Estatus</label>
-                <select name="status" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    <option>Realizada</option>
-                    <option>Cancelada</option>
+                <select name="estatus" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
+                    <option value="realizada">Realizada</option>
+                    <option value="cancelada">Cancelada</option>
                 </select>
             </div>
 
@@ -96,6 +63,4 @@
         </form>
     </div>
 </div>
-
 @endsection
- 

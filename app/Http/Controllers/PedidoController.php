@@ -4,42 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
-use App\models\Proveedor;
-use App\models\Empleado;
+use App\Models\Proveedor;
+use App\Models\Empleado;
+
 class PedidoController extends Controller
 {
-    //
     public function listado() {
-    $pedidos = Pedido::all();
-    return view('pedido/lista', compact('pedidos'));
-}
+        $pedidos = Pedido::all();
+        return view('pedido/lista', compact('pedidos'));
+    }
 
-public function detalle() {
-    return view('pedido/detalle');
-}
-public function inicio() {
-   
-     $proveedores = Proveedor::all(); 
-    $empleados = Empleado::all();
-    return view('pedido/inicio', compact('proveedores', 'empleados'));
+    public function detalle() {
+        return view('pedido/detalle');
+    }
 
-}
-public function guardar(Request $request) {
-    //dd($request->all());
-    $pedido = new Pedido();
-    
-    $pedido->total = $request->input('total');
-    $pedido->cliente_id = $request->input('cliente_id');
-    $pedido->empleado_id = $request->input('empleado_id');
-    $pedido->status = $request->input('status');
+    public function inicio() {
+        $proveedores = Proveedor::all(); 
+        $empleados = Empleado::all();
+        return view('pedido/inicio', compact('proveedores', 'empleados'));
+    }
 
-    $pedido->precio = $request->input('precio');
-    $pedido->proveedor_id = $request->input('proveedor_id');
-$pedido->cantidad = $request->input('cantidad');
-$pedido->impuesto = $request->input('impuesto');
-$pedido->total = $request->input('total');
-    $pedido->save();
+    public function guardar(Request $request) {
+     
+        $pedido = new Pedido();
+        
+        $pedido->proveedor_id = $request->input('proveedor_id');
+        $pedido->empleado_id = $request->input('empleado_id');
+        $pedido->total = $request->input('total');
+        $pedido->estatus = $request->input('estatus', 'realizado'); // valor por defecto
+        
+       
+        $pedido->save();
 
-    return redirect('/pedido/')->with('success', 'Pedido guardado exitosamente.');
-}
+        return redirect('/pedido/lista')->with('success', 'Pedido guardado exitosamente.');
+    }
 }
