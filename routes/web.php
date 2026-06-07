@@ -33,6 +33,10 @@ use App\Http\Controllers\InicioController;
 Route::get('/empleado/lista', [EmpleadoController::class, 'listado']);
 Route::get('/empleado', [EmpleadoController::class, 'inicio']);
 Route::post('/empleado/guardar', [EmpleadoController::class, 'guardar']);
+Route::get('/empleado/edicion/{id}', [EmpleadoController::class, 'actualizar']);
+Route::post('/empleado/eliminar/{id}', [EmpleadoController::class, 'eliminar']);
+Route::post('/empleado/cambiar-estado/{id}', [EmpleadoController::class, 'cambiarEstado']);
+Route::get('/empleado/mostrar/{id}', [EmpleadoController::class, 'mostrar']);
 
 Route::get('/venta/lista', [VentaController::class, 'listado']);
 Route::get('/venta/detalle', [VentaController::class, 'detalle']);
