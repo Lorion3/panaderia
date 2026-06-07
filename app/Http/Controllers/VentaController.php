@@ -14,6 +14,12 @@ class VentaController extends Controller
         $ventas = Venta::all();
         return view('venta/lista', compact('ventas'));
     }
+    public function formulario() {
+        $clientes = Cliente::all();
+        $empleados = Empleado::all();
+        $productos = Producto::all();
+        return view('venta/formulario', compact('clientes', 'empleados', 'productos'));
+    }
 
     public function detalle() {
         return view('venta/detalle');
@@ -21,10 +27,32 @@ class VentaController extends Controller
 
     public function inicio() {
         $clientes = Cliente::all();
+        
         $empleados = Empleado::all();
         $productos = Producto::all();
         return view('venta/inicio', compact('clientes', 'empleados', 'productos'));
     }
+    public function editar($id) {
+    $venta = Venta::find($id);
+    $clientes = Cliente::all();
+    return view('venta/editar', compact('venta', 'clientes'));
+}
+
+public function actualizar(Request $request, $id) {
+    $venta = Venta::find($id);
+    $venta->cliente_id = $request->input('cliente_id');
+    $venta->total = $request->input('total');
+    $venta->estatus = $request->input('estatus');
+    $venta->save();
+
+    return redirect('/venta/lista')->with('success', 'Venta actualizada');
+}
+
+public function eliminar($id) {
+    $venta = Venta::find($id);
+    $venta->delete();
+    return redirect('/venta/lista')->with('success', 'Venta eliminada');
+}
 
     public function guardar(Request $request) {
         // Quita o comenta el dd()

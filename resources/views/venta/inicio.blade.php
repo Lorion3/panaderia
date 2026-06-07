@@ -1,66 +1,25 @@
 @extends('/plantilla/base')
 
 @section('dinamico')
-<div class="max-w-5xl mx-auto p-6">
+<a href="/venta/formulario"
+        class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Agregar Venta 
+    </a>
+    <a href="/venta/lista"
+        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Ver Ventas
+    </a>
+  
+    <a href="/venta/eliminar/"
+        class="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Eliminar Venta
+    </a>
+    <a href="/venta/editar/"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+        Editar Venta
+    </a>
+    
 
-    <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
+    
 
-        <div class="bg-blue-800 text-white px-6 py-4">
-            <h2 class="text-2xl font-bold">Registrar Venta</h2>
-        </div>
-
-        <form method="POST" action="{{ url('/venta/guardar') }}" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            @csrf
-
-            {{-- <div>
-                <label class="block mb-2 font-semibold text-gray-700">Empleado</label>
-                <select name="empleado_id" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    @foreach($empleados as $empleado)
-                        <option value="{{ $empleado->id }}">{{ $empleado->nombre }}</option>
-                    @endforeach
-                </select>
-            </div> --}}
-
-            <div>
-                <label class="block mb-2 font-semibold text-gray-700">Cliente</label>
-                <select name="cliente_id" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    @foreach($clientes as $cliente)
-                        <option value="{{ $cliente->id }}">{{ $cliente->nombre }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div>
-                <label class="block mb-2 font-semibold text-gray-700">Total</label>
-                <input type="number"
-                name="total"
-                min="0"
-                required
-                max="9999.99"
-                step="0.01"
-                class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-            </div>
-
-            <div>
-                <label class="block mb-2 font-semibold text-gray-700">Estatus</label>
-                <select name="estatus" class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-blue-200 focus:border-blue-700">
-                    <option value="realizada">Realizada</option>
-                    <option value="cancelada">Cancelada</option>
-                </select>
-            </div>
-
-            <div class="md:col-span-2 flex justify-end">
-                <a href="/venta/lista"
-                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
-                        historial de ventas
-                    </a>
-                <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition">
-                    Guardar Venta
-                </button>
-            </div>
-
-        </form>
-    </div>
-</div>
 @endsection

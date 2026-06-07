@@ -30,34 +30,67 @@ use App\Http\Controllers\InicioController;
 //Route::view('pedido/detalle','/pedido/detalle');
 
 //--------------------------------------------------->Controlladores<--------------------------------------------------
+//--------------------Rutas Empleados
 Route::get('/empleado/lista', [EmpleadoController::class, 'listado']);
 Route::get('/empleado', [EmpleadoController::class, 'inicio']);
+Route::get('/empleado/formulario', [EmpleadoController::class, 'formulario']);
 Route::post('/empleado/guardar', [EmpleadoController::class, 'guardar']);
+Route::get('/empleado/edicion/{id}', [EmpleadoController::class, 'actualizar']);
+Route::post('/empleado/eliminar/{id}', [EmpleadoController::class, 'eliminar']);
+Route::post('/empleado/cambiar-estado/{id}', [EmpleadoController::class, 'cambiarEstado']);
+Route::get('/empleado/mostrar/{id}', [EmpleadoController::class, 'mostrar']);
 
+
+
+
+//--------------------Rutas Ventas
 Route::get('/venta/lista', [VentaController::class, 'listado']);
 Route::get('/venta/detalle', [VentaController::class, 'detalle']);
 Route::get('/venta', [VentaController::class, 'inicio']);
+Route::get('/venta/formulario', [VentaController::class, 'formulario']);
+
 Route::post('/venta/guardar', [VentaController::class, 'guardar']);
+Route::get('/venta/editar/{id}', [VentaController::class, 'editar']);
+Route::put('/venta/actualizar/{id}', [VentaController::class, 'actualizar']);
+Route::delete('/venta/eliminar/{id}', [VentaController::class, 'eliminar']);
 
-Route::get('/producto/lista', [ProductoController::class, 'listado']);
+//--------------------Rutas Productos
 Route::get('/producto', [ProductoController::class, 'inicio']);
+Route::get('/producto/lista', [ProductoController::class, 'listado']);
+Route::get('/producto/inicio', [ProductoController::class, 'inicio']);
+Route::get('/producto/formulario', [ProductoController::class, 'formulario']);
 Route::post('/producto/guardar', [ProductoController::class, 'guardar']);
-
+Route::get('/producto/editar/{id}', [ProductoController::class, 'editar']);
+Route::put('/producto/actualizar/{id}', [ProductoController::class, 'actualizar']);
+Route::delete('/producto/eliminar/{id}', [ProductoController::class, 'eliminar']);
+//----------------------------Api
 Route::view('/api/inicio','/api/api');
 
+
+//--------------------Rutas Proveedores
 Route::get('/proveedor/lista', [ProveedorController::class, 'listado']);
 Route::get('/proveedor', [ProveedorController::class, 'inicio']);
 Route::post('/proveedor/guardar', [ProveedorController::class, 'guardar']);
+Route::get('/proveedor/formulario', [ProveedorController::class, 'formulario']);
 
+//--------------------Rutas Clientes
 Route::get('/cliente/lista', [ClienteController::class, 'listado']);
 Route::get('/cliente', [ClienteController::class, 'inicio']);
 Route::post('/cliente/guardar', [ClienteController::class, 'guardar']);
+Route::get('/cliente/formulario', [ClienteController::class, 'formulario']);
 
-Route::get('/pedido/lista', [PedidoController::class, 'listado']);
-Route::get('/pedido/detalle', [PedidoController::class, 'detalle']);
+
+//--------------------Rutas Pedidos
 Route::get('/pedido', [PedidoController::class, 'inicio']);
+Route::get('/pedido/lista', [PedidoController::class, 'listado']);
+Route::get('/pedido/inicio', [PedidoController::class, 'inicio']);
+Route::get('/pedido/formulario', [PedidoController::class, 'formulario']);
+Route::get('/pedido/detalle', [PedidoController::class, 'detalle']);
 Route::post('/pedido/guardar', [PedidoController::class, 'guardar']);
-
+Route::get('/pedido/editar/{id}', [PedidoController::class, 'editar']);
+Route::put('/pedido/actualizar/{id}', [PedidoController::class, 'actualizar']);
+Route::delete('/pedido/eliminar/{id}', [PedidoController::class, 'eliminar']);
+//---------------------Rutas Inicio
 Route::get('/', [InicioController::class, 'inicio']);
 
 

@@ -1,0 +1,56 @@
+@extends('/plantilla/base')
+
+@section('dinamico')
+<div class="max-w-5xl mx-auto p-6">
+    <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
+        <div class="bg-blue-800 text-white px-6 py-4">
+            <h2 class="text-2xl font-bold">Editar Pedido</h2>
+        </div>
+
+        <form method="POST" action="/pedido/actualizar/{{ $pedido->id }}" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            @csrf
+            @method('PUT')
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">Proveedor</label>
+                <select name="proveedor_id" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                    @foreach($proveedores as $proveedor)
+                        <option value="{{ $proveedor->id }}" {{ $pedido->proveedor_id == $proveedor->id ? 'selected' : '' }}>
+                            {{ $proveedor->contacto }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">Empleado</label>
+                <select name="empleado_id" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                    @foreach($empleados as $empleado)
+                        <option value="{{ $empleado->id }}" {{ $pedido->empleado_id == $empleado->id ? 'selected' : '' }}>
+                            {{ $empleado->nombre }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">Total</label>
+                <input type="number" name="total" value="{{ $pedido->total }}" step="0.01" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+            </div>
+
+            <div>
+                <label class="block mb-2 font-semibold text-gray-700">Estatus</label>
+                <select name="estatus" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                    <option value="realizado" {{ $pedido->estatus == 'realizado' ? 'selected' : '' }}>Realizado</option>
+                    <option value="cancelado" {{ $pedido->estatus == 'cancelado' ? 'selected' : '' }}>Cancelado</option>
+                </select>
+            </div>
+
+            <div class="md:col-span-2 flex justify-end gap-4">
+                <a href="/pedido/lista" class="bg-gray-500 text-white px-8 py-3 rounded-xl">Cancelar</a>
+                <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-xl">Actualizar</button>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

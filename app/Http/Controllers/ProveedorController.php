@@ -14,6 +14,11 @@ class ProveedorController extends Controller
         $proveedores = Proveedor::all();
         return view('proveedor/lista', compact('proveedores'));
     }
+
+    public function formulario()
+    {
+        return view('proveedor/formulario');
+    }
     public function inicio()
     {
         return view('proveedor/inicio');
