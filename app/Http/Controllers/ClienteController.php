@@ -16,6 +16,11 @@ class ClienteController extends Controller
         return view('cliente/lista', compact('clientes'));
     }
 
+    public function formulario()
+    {
+        return view('cliente/formulario');
+    }
+
     public function inicio()
     {
         return view('cliente/inicio');

@@ -13,7 +13,10 @@ class EmpleadoController extends Controller
         $empleados = Empleado::all();
         return view('empleado/lista', compact('empleados'));
     }
-
+    public function formulario()
+    {
+        return view('empleado/formulario');
+    }
 
     public function inicio()
     {

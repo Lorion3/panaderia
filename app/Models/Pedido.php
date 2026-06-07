@@ -19,7 +19,10 @@ class Pedido extends Model
     'empleado_id',
     'fecha',
     'total',
+    'impuesto',
+    'cantidad',
     'estatus'
+    
 ];
 
     

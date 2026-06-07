@@ -1,4 +1,4 @@
-</a>@extends('/plantilla/base')
+@extends('/plantilla/base')
 
 @section('dinamico')
 
@@ -11,14 +11,12 @@
         
       
         <div class="bg-blue-800 text-white px-6 py-4">
-            <h2 class="text-2xl font-bold">Eliminar Empleado</h2>
-            <p class="text-blue-100 text-sm">¿Estás seguro de que deseas eliminar este empleado?</p>
+            <h2 class="text-2xl font-bold">Registrar Empleado</h2>
+            <p class="text-blue-100 text-sm">Completa la información del empleado</p>
         </div>
 
         <!-- Body -->
-        <form method="POST"
-         action="'/empleado/eliminar/', [{{ $empleado->id }}]"
-         enctype="multipart/form-data"
+        <form method="POST" action="/empleado/guardar" enctype="multipart/form-data"
          class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
          @csrf()
 
@@ -27,51 +25,66 @@
             <!-- Nombre -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Nombre {{ $empleado->nombre }}
+                    Nombre
                 </label>
 
+                <input type="text"
+                    name="nombre"
+                    maxlength="50"
+                    required
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
             <!-- Apellido -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2"> 
-                    Apellido {{ $empleado->apellido }}
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Apellido
                 </label>
-
+                <input type="text"
+                    name="apellido"
+                    maxlength="50"
+                    required
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
             <!-- Correo -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Correo {{ $empleado->email }}
+                    Correo
                 </label>
-
+                <input type="email"
+                    name="email"
+                    maxlength="150"
+                    required
+                   
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
             <!-- Usuario -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Usuario {{ $empleado->usuario }}
+                    Usuario
                 </label>
-
-            </div>
-
-            <!-- Contraseña -->
-            <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Contraseña {{ $empleado->contrasena }}
-                </label>
+                <input type="text"
+                    name="usuario"
+                    maxlength="50"
                     required
-
+                    
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
             <!-- Contraseña -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Contraseña {{ $empleado->contrasena }}
+                    Contraseña
                 </label>
                 <input type="password"
-
+                    name="contrasena"
+                    maxlength="255"
+                    required
+                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
             <!-- Teléfono -->
@@ -79,11 +92,8 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Teléfono
                 </label>
-
-                
                 <input type="text"
                     name="telefono"
-                    value="{{ $empleado->telefono }}"
                     maxlength="10"
                     required
                     min="0"
@@ -99,11 +109,10 @@
                 </label>
                 <select
                     name="rol"
-                    
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                    <option value="Administrador" {{ $empleado->rol == 'Administrador' ? 'selected' : '' }}>Administrador</option>
-                    <option value="Vendedor" {{ $empleado->rol == 'Vendedor' ? 'selected' : '' }}>Vendedor</option>
-                    <option value="Supervisor" {{ $empleado->rol == 'Supervisor' ? 'selected' : '' }}>Supervisor</option>
+                    <option>Administrador</option>
+                    <option>Vendedor</option>
+                    <option>Supervisor</option>
                 </select>
             </div>
 
@@ -115,8 +124,8 @@
                 <select
                 name="estatus"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                    <option value="Activo" {{ $empleado->estatus == 'Activo' ? 'selected' : '' }}>Activo</option>
-                    <option value="Inactivo" {{ $empleado->estatus == 'Inactivo' ? 'selected' : '' }}>Inactivo</option>
+                    <option>Activo</option>
+                    <option>Inactivo</option>
                 </select>
             </div>
 
@@ -127,7 +136,6 @@
                 </label>
                 <input type="file"
                 name="imagen"
-                value="{{ $empleado->imagen }}"
                     class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
             </div>
 
@@ -140,7 +148,7 @@
 
                     <button type="submit"
                     class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition">
-                    Eliminar Empleado
+                    Guardar Empleado
                 </button>
             </div>
 
