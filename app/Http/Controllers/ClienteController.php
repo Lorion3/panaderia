@@ -26,13 +26,21 @@ class ClienteController extends Controller
         return view('cliente/inicio');
     }
 
-    public function editar($id) {
+    public function editar(Request $request){ 
+        $id = $request->route('id');
         $cliente = Cliente::find($id);
-        return view('cliente/edicion', compact('cliente'));
+       if(!$cliente) {
+            return redirect('/cliente')->with('error','Cliente no encontrado');
+        }
+        return view('cliente/edicion',['cliente' => $cliente]);
     }
 
-public function actualizar(Request $request, $id) {
+    public function actualizar(Request $request) {
+    $id = $request->route('id');
     $cliente = Cliente::find($id);
+    if(!$cliente) {
+        return redirect('/cliente')->with('error','Cliente no encontrado');
+    }
     $cliente->nombre = $request->input('nombre');
     $cliente->apellido_materno = $request->input('apellido_materno');
     $cliente->apellido_paterno = $request->input('apellido_paterno');
@@ -44,7 +52,7 @@ public function actualizar(Request $request, $id) {
     $cliente->direccion = $request->input('direccion');
     $cliente->imagen = $request->input('imagen');
     $cliente->save();   
-    return redirect('/cliente/lista')->with('success', 'Cliente actualizado');
+    return redirect('/cliente')->with('success', 'Cliente actualizado');
 }
 
     public function guardar(Request $request)
@@ -66,4 +74,39 @@ public function actualizar(Request $request, $id) {
 
         return redirect('/cliente')->with('success', 'Cliente guardado exitosamente.');
     }
+
+    public function eliminar(Request $request)
+    {
+        $id = $request->route('id');
+        $cliente = Cliente::find($id);
+        if(!$cliente){
+            return redirect('/cliente')->with('error','Cliente no encontrado');
+        }
+        $cliente->estatus = 'inactivo';
+        $cliente->save();
+        return redirect('/cliente')->with('success', 'Cliente eliminado');
+    }
+
+    public function mostrar(Request $request)
+    {
+        $id = $request->route('id');
+        $cliente = Cliente::find($id);
+        if(!$cliente){
+            return redirect('/cliente')->with('error','Cliente no encontrado');
+        }
+        return view('cliente/borrado',['cliente' => $cliente]);
+    }
+
+    public function cambiarEstado(Request $request)
+    {
+        $id = $request->route('id');
+        $cliente = Cliente::find($id);
+        if(!$cliente){
+            return redirect('/cliente')->with('error','Cliente no encontrado');
+        }
+        $cliente->estatus = ($cliente->estatus === 'activo') ? 'inactivo' : 'activo';
+        $cliente->save();
+        return redirect('/cliente')->with('success', 'Estado del cliente actualizado');
+    }
 }
+

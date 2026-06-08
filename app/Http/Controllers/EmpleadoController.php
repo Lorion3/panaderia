@@ -80,7 +80,8 @@ class EmpleadoController extends Controller
         if(!$empleado){
             return redirect('/empleado')->with('error','Empleado no encontrado');
         }
-        $empleado->delete();
+        $empleado->estatus ='inactivo';
+        $empleado->save();
         return redirect('/empleado')->with('success', 'Empleado eliminado exitosamente.');
     }
 
@@ -89,7 +90,7 @@ class EmpleadoController extends Controller
         if(!$empleado){
             return redirect('/empleado')->with('error','Empleado no encontrado');
         }
-        $empleado->estatus = $empleado->estatus === 'Activo' ? 'Inactivo' : 'Activo';
+        $empleado->estatus = $empleado->estatus === 'activo' ? 'inactivo' : 'activo';
         $empleado->save();
         return redirect('/empleado')->with('success', 'Estado del empleado actualizado exitosamente.');
     }
@@ -100,6 +101,6 @@ class EmpleadoController extends Controller
         if(!$empleado){
             return redirect('/empleado')->with('error','Empleado no encontrado');
         }
-        return view('empleado/borrado',['empleado' => $empleado]);
+        return view('/empleado/borrado',['empleado' => $empleado]);
     }
 }

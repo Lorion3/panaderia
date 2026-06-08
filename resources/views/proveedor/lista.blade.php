@@ -27,7 +27,7 @@
                         <th class="px-6 py-4">Correo</th>
                         <th class="px-6 py-4">Estado</th>
                         <th class="px-6 py-4">Ciudad</th>
-                        <th class="px-6 py-4">Dirección</th>
+                        
                     </tr>
                 </thead>
 
@@ -40,7 +40,7 @@
                     <td class="px-6 py-4">{{ $proveedor->correo }}</td>
                     <td class="px-6 py-4">{{ $proveedor->estado }}</td>
                     <td class="px-6 py-4">{{ $proveedor->ciudad }}</td>
-                    <td class="px-6 py-4">{{ $proveedor->direccion }}</td>
+                    
                 </tr>
                 @endforeach
                 </tbody>
