@@ -15,10 +15,37 @@ class ProductoController extends Controller
       //  $proveedores = Proveedor::all();
         return view('producto/lista', compact('productos'));
     }
-
 public function formulario() {
-    return view('producto/formulario');
+    $proveedores = Proveedor::all();
+    return view('producto/formulario', compact('proveedores'));
 }
+
+public function editar($id) {
+    $producto = Producto::find($id);
+    $proveedores = Proveedor::all();
+    return view('producto/editar', compact('producto', 'proveedores'));
+}
+
+public function actualizar(Request $request, $id) {
+    $producto = Producto::find($id);
+    $producto->proveedor_id = $request->input('proveedor_id');
+    $producto->nombre = $request->input('nombre');
+    $producto->categoria = $request->input('categoria');
+    $producto->precio = $request->input('precio');
+    $producto->existencia = $request->input('existencia');
+    $producto->estatus = $request->input('estatus');
+    $producto->descripcion = $request->input('descripcion');
+    $producto->save();
+
+    return redirect('/producto/lista')->with('success', 'Producto actualizado');
+}
+
+public function eliminar($id) {
+    $producto = Producto::find($id);
+    $producto->delete();
+    return redirect('/producto/lista')->with('success', 'Producto eliminado');
+}
+
 
 public function inicio() { 
     $proveedores = Proveedor::all(); 
@@ -26,14 +53,14 @@ public function inicio() {
     return view('producto/inicio', compact('proveedores'));
 }
 public function guardar(Request $request) {
-    dd($request->all());
+    // dd($request->all());
     $producto = new Producto();
     $producto->nombre = $request->input('nombre');
     
     $producto->proveedor_id = $request->input('proveedor_id');
     $producto->descripcion = $request->input('descripcion');
     $producto->precio = $request->input('precio');
-    $producto->existencia = $request->input('stock');
+    $producto->existencia = $request->input('existencia');
     $producto->estatus = $request->input('estatus');
     $producto->categoria = $request->input('categoria');
     $producto->imagen1 = $request->input('imagen1');

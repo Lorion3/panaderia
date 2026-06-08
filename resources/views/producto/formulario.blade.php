@@ -6,56 +6,32 @@
     
     <div class="bg-white shadow-2xl rounded-2xl overflow-hidden border border-blue-100">
         
-        <!-- Header -->
         <div class="bg-blue-800 text-white px-6 py-4">
             <h2 class="text-2xl font-bold">Registrar Producto</h2>
             <p class="text-blue-100 text-sm">Completa la información del producto</p>
         </div>
 
-        <!-- Body -->
-        <form class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form method="POST" action="{{ url('/producto/guardar') }}" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            @csrf
 
-            <!-- Proveedor -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Proveedor *
-                </label>
-                
-                <select name="proveedor_id" required
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                   @foreach($proveedores as $proveedor)
-                    <option value="{{ $proveedor->id }}">{{ $proveedor->contacto }}</option>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Proveedor *</label>
+                <select name="proveedor_id" required class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                    <option value="">Seleccione un proveedor</option>
+                    @foreach($proveedores as $proveedor)
+                        <option value="{{ $proveedor->id }}">{{ $proveedor->contacto }}</option>
                     @endforeach
-                    {{-- <option value="">Seleccione un proveedor</option>
-                    <option value="1">Harinas SA</option>
-                    <option value="2">Lacteos MX</option>
-                    <option value="3">Azucarera</option>
-                    <option value="4">Chocolate Plus</option>
-                    <option value="5">Frutas Fresh</option>
-                    <option value="6">Nueces y Semillas </option> --}}
                 </select>
             </div>
 
-            <!-- Nombre del Producto -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Nombre del Producto *   
-                </label>
-                <input type="text"
-                name="nombre"
-                required
-                maxlength="50"
-                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Nombre del Producto *</label>
+                <input type="text" name="nombre" required maxlength="50" class="w-full rounded-xl border border-gray-300 px-4 py-3">
             </div>
 
-            <!-- Categoría -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Categoría
-                </label>
-                <select name="categoria"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Categoría</label>
+                <select name="categoria" class="w-full rounded-xl border border-gray-300 px-4 py-3">
                     <option value="">Seleccione una categoría</option>
                     <option value="Pan">Pan</option>
                     <option value="Pan dulce">Pan dulce</option>
@@ -64,82 +40,48 @@
                 </select>
             </div>
 
-            <!-- Precio -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Precio *
-                </label>
-                <input type="number" name="precio" required step="0.01" min="0" max="9999.99"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Precio *</label>
+                <input type="number" name="precio" required step="0.01" min="0" max="9999.99" class="w-full rounded-xl border border-gray-300 px-4 py-3">
             </div>
 
-            <!-- Existencia -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Existencia *
-                </label>
-                <input type="number" name="stock" required min="0"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Existencia *</label>
+                <input type="number" name="existencia" required min="0" class="w-full rounded-xl border border-gray-300 px-4 py-3">
             </div>
 
-            <!-- Estatus -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Estatus
-                </label>
-                <select name="estatus"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Estatus</label>
+                <select name="estatus" class="w-full rounded-xl border border-gray-300 px-4 py-3">
                     <option value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
                 </select>
             </div>
 
-            <!-- Descripción -->
             <div class="md:col-span-2">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Descripción
-                </label>
-                <textarea name="descripcion" rows="3" maxlength="150"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3"></textarea>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Descripción</label>
+                <textarea name="descripcion" rows="3" maxlength="150" class="w-full rounded-xl border border-gray-300 px-4 py-3"></textarea>
                 <p class="text-xs text-gray-500 mt-1">Máximo 150 caracteres</p>
             </div>
 
-            <!-- Imagen -->
             <div class="md:col-span-2">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Imagen del Producto
-                </label>
-                <input type="file" name="imagen1" accept="image/*"
-                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
-                <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
-            </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Imagen del Producto 2
-                </label>
-                <input type="file" name="imagen2" accept="image/*"
-                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
-                <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
-            </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Imagen del Producto 3
-                </label>
-                <input type="file" name="imagen3" accept="image/*"
-                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
-                <p class="text-xs text-gray-500 mt-1">Formatos permitidos: JPG, PNG, GIF</p>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Imagen del Producto (URL)</label>
+                <input type="text" name="imagen1" placeholder="https://ejemplo.com/imagen.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3">
             </div>
 
-            <!-- Botón -->
-            <div class="md:col-span-2 flex justify-end">
-                <a href="/producto/lista"
-                        class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block">
-                        mostrar productos   
-                    </a>
-                <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300">
-                    Guardar Producto
-                </button>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Imagen del Producto 2 (URL)</label>
+                <input type="text" name="imagen2" placeholder="https://ejemplo.com/imagen2.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+            </div>
+
+            <div class="md:col-span-2">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Imagen del Producto 3 (URL)</label>
+                <input type="text" name="imagen3" placeholder="https://ejemplo.com/imagen3.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+            </div>
+
+            <div class="md:col-span-2 flex justify-end gap-4">
+                <a href="/producto/lista" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 rounded-xl shadow-lg">Cancelar</a>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-900 text-white font-semibold px-8 py-3 rounded-xl shadow-lg">Guardar Producto</button>
             </div>
 
         </form>
