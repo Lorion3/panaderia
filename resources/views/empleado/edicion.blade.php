@@ -1,4 +1,4 @@
-</a>@extends('/plantilla/base')
+@extends('/plantilla/base')
 
 @section('dinamico')
 
@@ -11,13 +11,13 @@
         
       
         <div class="bg-blue-800 text-white px-6 py-4">
-            <h2 class="text-2xl font-bold">Registrar Empleado</h2>
+            <h2 class="text-2xl font-bold">Editar Empleado</h2>
             <p class="text-blue-100 text-sm">Completa la información del empleado</p>
         </div>
 
         <!-- Body -->
         <form method="POST"
-         action="/empleado/actualizar" enctype="multipart/form-data"
+         action="/empleado/actualizar/{{ $empleado->id }}"  enctype="multipart/form-data"
          class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
          @csrf()
 

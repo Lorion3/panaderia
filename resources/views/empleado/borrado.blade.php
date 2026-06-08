@@ -1,4 +1,4 @@
-</a>@extends('/plantilla/base')
+@extends('/plantilla/base')
 
 @section('dinamico')
 
@@ -17,7 +17,7 @@
 
         <!-- Body -->
         <form method="POST"
-         action="'/empleado/eliminar/', [{{ $empleado->id }}]"
+         action="/empleado/eliminar/{{ $empleado->id }}"
          enctype="multipart/form-data"
          class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
          @csrf()
@@ -77,47 +77,25 @@
             <!-- Teléfono -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Teléfono
+                    Teléfono {{ $empleado->telefono }}
                 </label>
 
-                
-                <input type="text"
-                    name="telefono"
-                    value="{{ $empleado->telefono }}"
-                    maxlength="10"
-                    required
-                    min="0"
-                    
-                    pattern="[0-9]{10}"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
             </div>
 
             <!-- Rol -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Rol
+                    Rol {{ $empleado->rol }}
                 </label>
-                <select
-                    name="rol"
-                    
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                    <option value="Administrador" {{ $empleado->rol == 'Administrador' ? 'selected' : '' }}>Administrador</option>
-                    <option value="Vendedor" {{ $empleado->rol == 'Vendedor' ? 'selected' : '' }}>Vendedor</option>
-                    <option value="Supervisor" {{ $empleado->rol == 'Supervisor' ? 'selected' : '' }}>Supervisor</option>
-                </select>
+                
             </div>
 
             <!-- Estatus -->
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Estatus
+                    Estatus {{ $empleado->estatus }}
                 </label>
-                <select
-                name="estatus"
-                    class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                    <option value="Activo" {{ $empleado->estatus == 'Activo' ? 'selected' : '' }}>Activo</option>
-                    <option value="Inactivo" {{ $empleado->estatus == 'Inactivo' ? 'selected' : '' }}>Inactivo</option>
-                </select>
+         
             </div>
 
             <!-- Imagen -->
@@ -125,12 +103,7 @@
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                     Imagen
                 </label>
-                <input type="file"
-                name="imagen"
-                value="{{ $empleado->imagen }}"
-                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">
-            </div>
-
+                <img src="{{ asset('storage/' . $empleado->imagen) }}" alt="Imagen del empleado" class="w-32 h-32 object-cover rounded-full">
             <!-- Botón -->
             <div class="md:col-span-2 flex justify-end">
                 <a href="/empleado/lista"

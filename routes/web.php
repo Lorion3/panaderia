@@ -35,10 +35,11 @@ Route::get('/empleado/lista', [EmpleadoController::class, 'listado']);
 Route::get('/empleado', [EmpleadoController::class, 'inicio']);
 Route::get('/empleado/formulario', [EmpleadoController::class, 'formulario']);
 Route::post('/empleado/guardar', [EmpleadoController::class, 'guardar']);
-Route::get('/empleado/edicion/{id}', [EmpleadoController::class, 'actualizar']);
+Route::get('/empleado/edicion/{id}', [EmpleadoController::class, 'editar']);
 Route::post('/empleado/eliminar/{id}', [EmpleadoController::class, 'eliminar']);
 Route::post('/empleado/cambiar-estado/{id}', [EmpleadoController::class, 'cambiarEstado']);
 Route::get('/empleado/mostrar/{id}', [EmpleadoController::class, 'mostrar']);
+Route::post('/empleado/actualizar/{id}', [EmpleadoController::class, 'actualizar']);
 
 
 
