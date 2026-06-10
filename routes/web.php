@@ -8,6 +8,7 @@ use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\VistaController;
 
 //Route::view('/','inicio');
 //Route::view('/cliente','/cliente/inicio');
@@ -105,3 +106,9 @@ Route::delete('/pedido/eliminar/{id}', [PedidoController::class, 'eliminar']);
 Route::get('/', [InicioController::class, 'inicio']);
 
 
+//---------------------Rutas Vistas
+Route::get('/vistas/vista_detalle_pedido', [VistaController::class, 'vista_detalle_pedido']);
+Route::get('/vistas/vista_detalle_venta', [VistaController::class, 'vista_detalle_venta']);
+Route::get('/vistas/vista_clientes', [VistaController::class, 'vista_clientes']);
+Route::get('/vistas', [VistaController::class, 'inicio']);
+//Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);

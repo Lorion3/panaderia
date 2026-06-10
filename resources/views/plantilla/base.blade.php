@@ -43,6 +43,7 @@
             
             <ul><a href="/venta" class="hover:text-blue-600">Venta</a></ul>
             
+            <ul><a href="/vistas" class="hover:text-blue-600"> Vistas</a></ul>
             
 
                 </div>
