@@ -125,7 +125,15 @@
 
         <div class="max-w-7xl mx-auto px-4 text-center text-gray-500">
 
-            © 2026 - 
+ @isset($response)
+    @foreach ($response['results'] as $inicio )
+        <p>Ubicación: {{ $resultado['locations'][0]['street'] }}</p>
+        <p>Latitud: {{ $resultado['locations'][0]['latLng']['lat'] }}</p>
+        <p>Longitud: {{ $resultado['locations'][0]['latLng']['lng'] }}</p>
+    @endforeach
+@endisset
+
+
 
         </div>
 
@@ -133,6 +141,7 @@
 
     <!-- FLOWBITE -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    
 
 </body>
 </html>

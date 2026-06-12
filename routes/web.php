@@ -115,4 +115,4 @@ Route::get('/vistas/vista_clientes', [VistaController::class, 'vista_clientes'])
 Route::get('/vistas', [VistaController::class, 'inicio']);
 //Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);
 
-Route::get('/geolocalizacion', [GeoController::class,'buscar']);
+Route::get('/api/geolocalizacion', [GeoController::class,'buscar']);
