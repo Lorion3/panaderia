@@ -16,10 +16,14 @@ return [
 'mapquest' => [
     'key' => env('MAPQUEST_KEY'),
 ],
+'openweathermap' => [
 
-    'postmark' => [
-        'key' => env('POSTMARK_API_KEY'),
-    ],
+    'key' => env('OPENWEATHERMAP_KEY'),
+],
+'postmark' => [
+
+    'key' => env('POSTMARK_API_KEY'),
+],
 
     'resend' => [
         'key' => env('RESEND_API_KEY'),

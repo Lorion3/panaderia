@@ -116,3 +116,9 @@ Route::get('/vistas', [VistaController::class, 'inicio']);
 //Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);
 
 Route::get('/api/geolocalizacion', [GeoController::class,'buscar']);
+Route::get('/api/clima', [GeoController::class,'clima']);
+Route::get('/api/tipodecambio', [GeoController::class,'tipodecambio']);
+Route::get('/ubicacion', [GeoController::class, 'ubicacion']);
+    Route::get('/todo', [GeoController::class, 'todo']); 
+    Route::post('/reset-ubicacion', [GeoController::class, 'resetUbicacion']);
+    Route::get('/api/footer-data', [GeoController::class, 'footerData']);
