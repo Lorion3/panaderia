@@ -9,6 +9,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\VistaController;
+use Illuminate\Support\Facades\Http;
 
 //Route::view('/','inicio');
 //Route::view('/cliente','/cliente/inicio');
@@ -112,3 +113,21 @@ Route::get('/vistas/vista_detalle_venta', [VistaController::class, 'vista_detall
 Route::get('/vistas/vista_clientes', [VistaController::class, 'vista_clientes']);
 Route::get('/vistas', [VistaController::class, 'inicio']);
 //Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);
+
+//MapquestApi
+Route::get('/prueba-mapquest', function () {
+
+    $response = Http::get(
+        'https://www.mapquestapi.com/geocoding/v1/address',
+        [
+            'key' => env('MAPQUEST_KEY'),
+            'location' => 'Guadalajara, Jalisco, Mexico'
+        ]
+    );
+
+    $data = $response->json();
+
+    $ubicacion = $data['results'][0]['locations'][0];
+
+    dd($ubicacion);
+});

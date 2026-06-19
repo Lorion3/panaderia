@@ -21,6 +21,7 @@
 
                 <thead class="bg-gray-100 uppercase text-xs text-gray-600">
                     <tr>
+                        <th class="px-6 py-4">Logo</th>
                         <th class="px-6 py-4">ID</th>
                         <th class="px-6 py-4">Empresa</th>
                         <th class="px-6 py-4">Contacto</th>
@@ -34,6 +35,9 @@
                 <tbody>
                 @foreach($proveedores as $proveedor)
                 <tr class="border-b hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">
+                        <img src="{{ $proveedor->imagen }}" alt="Logo de {{ $proveedor->empresa }}" class="w-12 h-12 rounded-full object-cover">
+                    </td>
                     <td class="px-6 py-4">{{ $proveedor->id }}</td>
                     <td class="px-6 py-4">{{ $proveedor->empresa }}</td>
                     <td class="px-6 py-4">{{ $proveedor->contacto }}</td>

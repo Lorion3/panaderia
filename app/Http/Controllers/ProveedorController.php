@@ -36,12 +36,18 @@ class ProveedorController extends Controller
         $proveedor->colonia = $request->input('colonia');
         $proveedor->codigo_postal = $request->input('codigo_postal');
         $proveedor->numero = $request->input('numero');
-        $proveedor->imagen = $request->input('imagen');
+        $proveedor->imagen = 'imagenes/proveedores/proveedor_default.jpg';
         $proveedor->calle = $request->input('calle');
 
 
-
         $proveedor->save();
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $nombre = 'proveedor_'.$proveedor->id.'.'.$file->getClientOriginalExtension();
+            $ruta = $file->storeAs('imagenes/proveedores', $nombre, 'public');
+            $proveedor->imagen = url('storage/'.$ruta);
+            $proveedor->save();
+        }
 
         return redirect('/proveedor')->with('success', 'Proveedor guardado exitosamente.');
     }
@@ -70,10 +76,19 @@ class ProveedorController extends Controller
         $proveedor->colonia = $request->input('colonia');
         $proveedor->codigo_postal = $request->input('codigo_postal');
         $proveedor->numero = $request->input('numero');
-        $proveedor->imagen = $request->input('imagen');
+        $proveedor->imagen = 'imagenes/proveedores/proveedor_default.jpg';
         $proveedor->calle = $request->input('calle');
 
-        $proveedor->save();   
+        $proveedor->save();  
+        
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $nombre = 'proveedor_'.$proveedor->id.'.'.$file->getClientOriginalExtension();
+            $ruta = $file->storeAs('imagenes/proveedores', $nombre, 'public');
+            $proveedor->imagen = url('storage/'.$ruta);
+            $proveedor->save();
+        }
+
         return redirect('/proveedor')->with('success', 'Proveedor actualizado');
     }
 

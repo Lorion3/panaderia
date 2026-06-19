@@ -35,10 +35,18 @@ class EmpleadoController extends Controller
         $empleado->contrasena = $request->input('contrasena');
         $empleado->rol = $request->input('rol');
         $empleado->usuario = $request->input('usuario');
-        $empleado->imagen = $request->input('imagen');
+        $empleado->imagen = 'imagenes/empleados/empleado_default.jpg';
         $empleado->estatus = $request->input('estatus');
 
         $empleado->save();
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $nombre = 'empleado_'.$empleado->id.'.'.$file->getClientOriginalExtension();
+            $ruta = $file->storeAs('imagenes/empleados', $nombre, 'public');
+            $empleado->imagen = url('storage/'.$ruta);
+            $empleado->save();
+        }
+
 
         return redirect('/empleado')->with('success', 'Empleado guardado exitosamente.');
     }
@@ -66,10 +74,18 @@ class EmpleadoController extends Controller
         $empleado->contrasena = $request->input('contrasena');
         $empleado->rol = $request->input('rol');
         $empleado->usuario = $request->input('usuario');
-        $empleado->imagen = $request->input('imagen');
+        $empleado->imagen = 'imagenes/empleados/empleado_default.jpg';
         $empleado->estatus = $request->input('estatus');
 
         $empleado->save();
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $nombre = 'empleado_'.$empleado->id.'.'.$file->getClientOriginalExtension();
+            $ruta = $file->storeAs('imagenes/empleados', $nombre, 'public');
+            $empleado->imagen = url('storage/'.$ruta);
+            $empleado->save();
+        }
+
 
         return redirect('/empleado')->with('success', 'Empleado actualizado exitosamente.');
     }

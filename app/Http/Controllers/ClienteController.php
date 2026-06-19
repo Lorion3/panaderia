@@ -52,6 +52,15 @@ class ClienteController extends Controller
     $cliente->direccion = $request->input('direccion');
     $cliente->imagen = $request->input('imagen');
     $cliente->save();   
+
+    if($request->hasFile('imagen')){
+        $file = $request->file('imagen');
+        $nombre = 'cliente_'.$cliente->id.'.'.$file->getClientOriginalExtension();
+        $ruta = $file->storeAs('imagenes/clientes', $nombre, 'public');
+        $cliente->imagen = url('storage/'.$ruta);
+        $cliente->save();
+    }
+    
     return redirect('/cliente')->with('success', 'Cliente actualizado');
 }
 
@@ -71,6 +80,13 @@ class ClienteController extends Controller
         $cliente->imagen = $request->input('imagen');
 
         $cliente->save();
+            if($request->hasFile('imagen')){
+        $file = $request->file('imagen');
+        $nombre = 'cliente_'.$cliente->id.'.'.$file->getClientOriginalExtension();
+        $ruta = $file->storeAs('imagenes/clientes', $nombre, 'public');
+        $cliente->imagen = url('storage/'.$ruta);
+        $cliente->save();
+    }
 
         return redirect('/cliente')->with('success', 'Cliente guardado exitosamente.');
     }
