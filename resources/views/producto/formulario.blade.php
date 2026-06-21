@@ -11,7 +11,7 @@
             <p class="text-blue-100 text-sm">Completa la información del producto</p>
         </div>
 
-        <form method="POST" action="{{ url('/producto/guardar') }}" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form method="POST" action="{{ url('/producto/guardar') }}" enctype="multipart/form-data" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             @csrf
 
             <div>
@@ -66,17 +66,20 @@
 
             <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Imagen del Producto (URL)</label>
-                <input type="text" name="imagen1" placeholder="https://ejemplo.com/imagen.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                <input type="file" name="imagen1"  class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                {{-- <input type="text" name="imagen1" placeholder="https://ejemplo.com/imagen.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3"> --}}
             </div>
 
             <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Imagen del Producto 2 (URL)</label>
-                <input type="text" name="imagen2" placeholder="https://ejemplo.com/imagen2.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                <input type="file" name="imagen2" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                {{-- <input type="text" name="imagen2" placeholder="https://ejemplo.com/imagen2.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3"> --}}
             </div>
 
             <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Imagen del Producto 3 (URL)</label>
-                <input type="text" name="imagen3" placeholder="https://ejemplo.com/imagen3.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                <input type="file" name="imagen3" class="w-full rounded-xl border border-gray-300 px-4 py-3">
+                {{-- <input type="text" name="imagen3" placeholder="https://ejemplo.com/imagen3.jpg" class="w-full rounded-xl border border-gray-300 px-4 py-3"> --}}
             </div>
 
             <div class="md:col-span-2 flex justify-end gap-4">

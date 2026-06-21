@@ -96,7 +96,7 @@
     <!-- FLOWBITE -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
-    <!-- SCRIPT PARA CARGAR DATOS DINÁMICOS -->
+   
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Función para obtener y mostrar datos del footer
@@ -203,11 +203,10 @@
                 container.innerHTML = html || '<span class="text-gray-400 text-sm">Datos no disponibles</span>';
             }
 
-            // Cargar datos cuando la página esté lista
             loadFooterData();
 
-            // Recargar cada 5 minutos (300000 ms)
-            setInterval(loadFooterData, 300000);
+            
+           
         });
     </script>
 </body>

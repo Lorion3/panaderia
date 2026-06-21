@@ -22,6 +22,7 @@
 
                 <thead class="bg-gray-100 uppercase text-xs text-gray-600">
                     <tr>
+                        <th class="px-6 py-4">Foto</th>
                         <th class="px-6 py-4">ID</th>
                         <th class="px-6 py-4">Nombre</th>
                         <th class="px-6 py-4">Correo</th>
@@ -35,6 +36,9 @@
                 <tbody>
                 @foreach($empleados as $empleado)   
 <tr class="border-b hover:bg-gray-50 transition">
+    <td class="px-6 py-4">
+        <img src="{{ $empleado->imagen }}" alt="Foto de {{ $empleado->nombre }}" class="w-12 h-12 rounded-full object-cover">
+    </td>
     <td class="px-6 py-4">{{ $empleado->id }}</td>
     <td class="px-6 py-4">{{ $empleado->nombre }}</td>
     <td class="px-6 py-4">{{ $empleado->correo }}</td>

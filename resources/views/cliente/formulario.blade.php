@@ -134,7 +134,7 @@
             <!-- Imagen -->
             <div class="md:col-span-2">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">
-                    Imagen
+                    Imagen (URL)
                 </label>
                 <input type="file" name="imagen" accept="image/*"
                     class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3">

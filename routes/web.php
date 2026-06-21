@@ -10,6 +10,7 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\VistaController;
 use App\Http\Controllers\GeoController;
+use App\Http\Controllers\AuthController;
 
 
 //Route::view('/','inicio');
@@ -122,3 +123,10 @@ Route::get('/ubicacion', [GeoController::class, 'ubicacion']);
     Route::get('/todo', [GeoController::class, 'todo']); 
     Route::post('/reset-ubicacion', [GeoController::class, 'resetUbicacion']);
     Route::get('/api/footer-data', [GeoController::class, 'footerData']);
+
+
+
+Route::get('/auth/login', [AuthController::class, 'loginForm'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/auth/check', [AuthController::class, 'checkAuth'])->name('auth.check');
