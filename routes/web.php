@@ -9,14 +9,19 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\VistaController;
+use App\Http\Controllers\SesionController;
+
+
 use Illuminate\Support\Facades\Http;
+
+use App\Http\Controllers\GeoController;
+
 
 //Route::view('/','inicio');
 //Route::view('/cliente','/cliente/inicio');
 
 //Route::view('/empleado','/empleado/inicio');
-
-
+Route::view('/login','/login/login');
 //Route::view('/pedido','/pedido/inicio');
 
 //Route::view('/producto','/producto/inicio');
@@ -31,6 +36,50 @@ use Illuminate\Support\Facades\Http;
 
 //Route::view('pedido/detalle','/pedido/detalle');
 
+
+
+
+
+Route::get('/prueba-mapquest', function () {
+
+    $response = Http::get(
+        'https://www.mapquestapi.com/geocoding/v1/address',
+        [
+            'key' => env('MAPQUEST_KEY'),
+            'location' => 'Guadalajara, Jalisco, Mexico'
+        ]
+    );
+
+    $data = $response->json();
+
+    $ubicacion = $data['results'][0]['locations'][0];
+
+    dd($ubicacion);
+});
+
+Route::get('/api/geolocalizacion', [GeoController::class,'buscar']);
+Route::get('/api/clima', [GeoController::class,'clima']);
+Route::get('/api/tipodecambio', [GeoController::class,'tipodecambio']);
+Route::get('/ubicacion', [GeoController::class, 'ubicacion']);
+    Route::get('/todo', [GeoController::class, 'todo']); 
+    Route::post('/reset-ubicacion', [GeoController::class, 'resetUbicacion']);
+    Route::get('/api/footer-data', [GeoController::class, 'footerData']);
+
+
+
+
+
+ // Acceso público
+Route::view('/login', '/login/login')->name('login');
+Route::post('/login', [SesionController::class, 'login']);
+
+
+
+//Acceso restringido
+Route::middleware(['auth:admin'])->group(function () {
+//Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);
+Route::get('/dashboard', [EmpleadoController::class, 'inicio'])->name('dashboard');
+   
 //--------------------------------------------------->Controlladores<--------------------------------------------------
 //--------------------Rutas Empleados
 Route::get('/empleado/lista', [EmpleadoController::class, 'listado']);
@@ -112,22 +161,10 @@ Route::get('/vistas/vista_detalle_pedido', [VistaController::class, 'vista_detal
 Route::get('/vistas/vista_detalle_venta', [VistaController::class, 'vista_detalle_venta']);
 Route::get('/vistas/vista_clientes', [VistaController::class, 'vista_clientes']);
 Route::get('/vistas', [VistaController::class, 'inicio']);
-//Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);
 
-//MapquestApi
-Route::get('/prueba-mapquest', function () {
-
-    $response = Http::get(
-        'https://www.mapquestapi.com/geocoding/v1/address',
-        [
-            'key' => env('MAPQUEST_KEY'),
-            'location' => 'Guadalajara, Jalisco, Mexico'
-        ]
-    );
-
-    $data = $response->json();
-
-    $ubicacion = $data['results'][0]['locations'][0];
-
-    dd($ubicacion);
+//Integren aquí sus CRUDs previos
+Route::post('/logout', [SesionController::class, 'logout'])->name('logout');
 });
+
+
+

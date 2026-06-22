@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empleado;
+use Illuminate\Support\Facades\Hash;
 
 class EmpleadoController extends Controller
 {
@@ -32,7 +33,7 @@ class EmpleadoController extends Controller
         $empleado->apellido = $request->input('apellido');
         $empleado->correo = $request->input('email');
         $empleado->telefono = $request->input('telefono');
-        $empleado->contrasena = $request->input('contrasena');
+        $empleado->contrasena = Hash::make($request->input('contrasena'));
         $empleado->rol = $request->input('rol');
         $empleado->usuario = $request->input('usuario');
         $empleado->imagen = 'imagenes/empleados/empleado_default.jpg';
@@ -71,7 +72,7 @@ class EmpleadoController extends Controller
         $empleado->apellido = $request->input('apellido');
         $empleado->correo = $request->input('email');
         $empleado->telefono = $request->input('telefono');
-        $empleado->contrasena = $request->input('contrasena');
+        $empleado->contrasena = Hash::make($request->input('contrasena'));
         $empleado->rol = $request->input('rol');
         $empleado->usuario = $request->input('usuario');
         $empleado->imagen = 'imagenes/empleados/empleado_default.jpg';
@@ -119,4 +120,8 @@ class EmpleadoController extends Controller
         }
         return view('/empleado/borrado',['empleado' => $empleado]);
     }
+
+    
 }
+
+
