@@ -42,6 +42,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'empleados',
+        ],
+           
+
+   
     ],
 
     /*
@@ -66,6 +73,10 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
         ],
+         'empleados' => [
+          'driver' => 'eloquent',
+          'model' => App\Models\Empleado::class,
+    ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -100,6 +111,8 @@ return [
             'throttle' => 60,
         ],
     ],
+
+ 
 
     /*
     |--------------------------------------------------------------------------

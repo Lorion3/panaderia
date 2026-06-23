@@ -12,6 +12,11 @@
             width: 300px; margin: 100px auto; padding: 20px;
             background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+          .login-box-google {
+            width: 300px; margin: 100px auto; padding: 20px;
+            background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            
+        }
         h2 { text-align: center; margin-bottom: 20px; }
         input[type="text"], input[type="password"] {
             width: 100%; padding: 10px; margin: 8px 0;
@@ -26,6 +31,14 @@
     </style>
 </head>
 <body>
+     <div class="login-box">
+        <h2>Iniciar sesión Con Google</h2>
+        <form method="POST" action="{{ route('login.google') }}">
+            @csrf
+           
+            <button type="submit">Iniciar sesión con Google</button>
+        </form>
+    </div>
     <div class="login-box">
         <h2>Iniciar sesión</h2>
         <form method="POST" action="{{ route('login') }}">
