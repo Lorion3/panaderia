@@ -71,14 +71,21 @@ Route::get('/ubicacion', [GeoController::class, 'ubicacion']);
 
  // Acceso público
 Route::view('/login', '/login/login')->name('login');
-Route::post('/login', [SesionController::class, 'login']);
+Route::post('/login', [SesionController::class, 'login']) ;
+
+
+// ->name('dashboard')
+
+
+
+
 
 
 
 //Acceso restringido
 Route::middleware(['auth:admin'])->group(function () {
 //Route::get('/vistas/vista_cliente', [VistaController::class, 'index']);
-Route::get('/dashboard', [EmpleadoController::class, 'inicio'])->name('dashboard');
+Route::get('/dashboard', [InicioController::class, 'inicio']) ->name('dashboard');
    
 //--------------------------------------------------->Controlladores<--------------------------------------------------
 //--------------------Rutas Empleados
