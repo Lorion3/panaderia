@@ -17,21 +17,74 @@
             <div class="flex justify-between items-center h-16">
                 <!-- LOGO -->
                 <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-blue-600">
+                    <a href="/" class="text-2xl font-bold text-blue-600">
                         Panaderia
                     </a>
                 </div>
 
                 <!-- MENU DESKTOP -->
                 <div class="hidden md:flex items-center space-x-8">
+                    <!-- Inicio - Visible para todos -->
                     <ul><a href="/" class="hover:text-blue-600">Inicio</a></ul>
-                    <ul><a href="/empleado" class="hover:text-blue-600">Empleado</a></ul>
-                    <ul><a href="/cliente" class="hover:text-blue-600">Cliente</a></ul>
-                    <ul><a href="/pedido" class="hover:text-blue-600">Pedido</a></ul>
-                    <ul><a href="/producto" class="hover:text-blue-600">Producto</a></ul>
-                    <ul><a href="/proveedor" class="hover:text-blue-600">Proveedor</a></ul>
-                    <ul><a href="/venta" class="hover:text-blue-600">Venta</a></ul>
-                    <ul><a href="/vistas" class="hover:text-blue-600">Vistas</a></ul>
+                    
+                    <!-- Empleado - SOLO MASTER -->
+                    @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
+                        <ul><a href="/empleado" class="hover:text-blue-600">Empleado</a></ul>
+                    @endif
+                    
+                    <!-- Cliente - Visible para todos los autenticados -->
+                    @if(Auth::guard('admin')->check())
+                        <ul><a href="/cliente" class="hover:text-blue-600">Cliente</a></ul>
+                    @endif
+                    
+                    <!-- Pedido - Visible para todos los autenticados -->
+                    @if(Auth::guard('admin')->check())
+                        <ul><a href="/pedido" class="hover:text-blue-600">Pedido</a></ul>
+                    @endif
+                    
+                    <!-- Producto - Visible para todos los autenticados -->
+                    @if(Auth::guard('admin')->check())
+                        <ul><a href="/producto" class="hover:text-blue-600">Producto</a></ul>
+                    @endif
+                    
+                    <!-- Proveedor - Visible para todos los autenticados -->
+                    @if(Auth::guard('admin')->check())
+                        <ul><a href="/proveedor" class="hover:text-blue-600">Proveedor</a></ul>
+                    @endif
+                    
+                    <!-- Venta - Visible para todos los autenticados -->
+                    @if(Auth::guard('admin')->check())
+                        <ul><a href="/venta" class="hover:text-blue-600">Venta</a></ul>
+                    @endif
+                    
+                    <!-- Vistas - Visible para todos los autenticados -->
+                    @if(Auth::guard('admin')->check())
+                        <ul><a href="/vistas" class="hover:text-blue-600">Vistas</a></ul>
+                    @endif
+
+                    <!-- Información del usuario y logout -->
+                    @if(Auth::guard('admin')->check())
+                        <div class="flex items-center space-x-4 border-l pl-4">
+                            <!-- Badge de rol -->
+                            <span class="px-2 py-1 text-xs font-semibold rounded-full 
+                                {{ Auth::guard('admin')->user()->esMaster() ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800' }}">
+                                {{ Auth::guard('admin')->user()->esMaster() ? ' Master' : ' Base' }}
+                            </span>
+                            
+                            <!-- Nombre del usuario -->
+                            <span class="text-sm text-gray-700">
+                                {{ Auth::guard('admin')->user()->nombre }} {{ Auth::guard('admin')->user()->apellido }}
+                            </span>
+                            
+                            <!-- Botón Logout -->
+                            <form action="{{ route('logout') }}" method="POST" class="inline">
+                                @csrf
+                                <button type="submit" class="text-red-600 hover:text-red-800 text-sm font-medium">
+                                    Cerrar Sesión
+                                </button>
+                            </form>
+                        </div>
+                    @endif
                 </div>
 
                 <!-- BOTÓN MOBILE -->
@@ -49,11 +102,42 @@
         <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
             <ul class="flex flex-col p-4 space-y-3">
                 <li><a href="/" class="hover:text-blue-600">Inicio</a></li>
-                <li><a href="/empleado" class="hover:text-blue-600">Empleado</a></li>
-                <li><a href="/cliente" class="hover:text-blue-600">Cliente</a></li>
-                <li><a href="/pedido" class="hover:text-blue-600">Pedido</a></li>
-                <li><a href="/producto" class="hover:text-blue-600">Producto</a></li>
-                <li><a href="/proveedor" class="hover:text-blue-600">Proveedor</a></li>
+                
+                <!-- Empleado - SOLO MASTER -->
+                @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->esMaster())
+                    <li><a href="/empleado" class="hover:text-blue-600">Empleado</a></li>
+                @endif
+                
+                <!-- Resto de opciones - Solo para autenticados -->
+                @if(Auth::guard('admin')->check())
+                    <li><a href="/cliente" class="hover:text-blue-600">Cliente</a></li>
+                    <li><a href="/pedido" class="hover:text-blue-600">Pedido</a></li>
+                    <li><a href="/producto" class="hover:text-blue-600">Producto</a></li>
+                    <li><a href="/proveedor" class="hover:text-blue-600">Proveedor</a></li>
+                    <li><a href="/venta" class="hover:text-blue-600">Venta</a></li>
+                    <li><a href="/vistas" class="hover:text-blue-600">Vistas</a></li>
+                    
+                    <!-- Información de usuario en mobile -->
+                    <li class="border-t pt-3 mt-3">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full 
+                                    {{ Auth::guard('admin')->user()->esMaster() ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800' }}">
+                                    {{ Auth::guard('admin')->user()->esMaster() ? ' Master' : ' Base' }}
+                                </span>
+                                <span class="ml-2 text-sm text-gray-700">
+                                    {{ Auth::guard('admin')->user()->nombre }}
+                                </span>
+                            </div>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="text-red-600 hover:text-red-800 text-sm">
+                                    Salir
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                @endif
             </ul>
         </div>
     </nav>
@@ -96,31 +180,26 @@
     <!-- FLOWBITE -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
-   
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Función para obtener y mostrar datos del footer
             function loadFooterData() {
                 const container = document.getElementById('footer-data');
                 
-                // Si el navegador soporta geolocalización, obtener coordenadas exactas
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
                         function(position) {
-                            // Usar coordenadas exactas del navegador
                             const lat = position.coords.latitude;
                             const lon = position.coords.longitude;
                             fetchFooterData(lat, lon);
                         },
                         function(error) {
-                            // Si no se puede obtener ubicación, usar IP
                             console.log('Usando ubicación por IP:', error.message);
                             fetchFooterData();
                         },
                         { timeout: 5000 }
                     );
                 } else {
-                    // Si no soporta geolocalización, usar IP
                     fetchFooterData();
                 }
             }
@@ -151,7 +230,7 @@
                 .catch(error => {
                     console.error('Error:', error);
                     container.innerHTML = `
-                        <span class="text-gray-400 text-sm">⚠️ No se pudo cargar la información</span>
+                        <span class="text-gray-400 text-sm"> No se pudo cargar la información</span>
                     `;
                 });
             }
@@ -160,7 +239,6 @@
                 const container = document.getElementById('footer-data');
                 let html = '';
 
-                // Ubicación
                 if (data.location) {
                     html += `
                         <div class="flex items-center text-gray-600">
@@ -173,7 +251,6 @@
                     `;
                 }
 
-                // Clima
                 if (data.weather) {
                     const iconUrl = `https://openweathermap.org/img/wn/${data.weather.icon}.png`;
                     html += `
@@ -184,7 +261,6 @@
                     `;
                 }
 
-                // Tipo de cambio
                 if (data.exchange && data.exchange.rates) {
                     html += `
                         <div class="flex items-center text-gray-600">
@@ -204,9 +280,6 @@
             }
 
             loadFooterData();
-
-            
-           
         });
     </script>
 </body>
