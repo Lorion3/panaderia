@@ -16,11 +16,18 @@
         </div>
 
     </header>
-<body>
     
-</body>
-</html>
- 
+<body>
+    <section class="text-center mt-10">
+        <h2 class="text-2xl font-semibold mb-4">Bienvenido a la Panadería</h2>
+        <p class="text-gray-600 mb-6">Explora nuestros productos, proveedores, ventas y pedidos.</p>
+        <a href="auth/login"
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
+            Iniciar Sesión
+        </a>
+    </section>
+
+        <!-- #region Botones -->
 
 
    
@@ -52,5 +59,8 @@
         Ver API
     </a>
 
+</body>
+</html>
+ 
 
 @endsection

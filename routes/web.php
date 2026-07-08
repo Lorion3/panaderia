@@ -15,6 +15,7 @@ use App\Http\Controllers\SesionController;
 use Illuminate\Support\Facades\Http;
 
 use App\Http\Controllers\GeoController;
+use App\Http\Controllers\AuthController;
 
 
 //Route::view('/','inicio');
@@ -175,3 +176,7 @@ Route::post('/logout', [SesionController::class, 'logout'])->name('logout');
 
 
 
+use App\Http\Controllers\SocialController;
+
+Route::get('/auth/google/redirect', [SocialController::class, 'redirect'])->name('google.redirect');
+Route::get('/auth/google/callback', [SocialController::class, 'callback'])->name('google.callback');

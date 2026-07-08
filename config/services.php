@@ -16,6 +16,11 @@ return [
 'mapquest' => [
     'key' => env('MAPQUEST_KEY'),
 ],
+'google' => [
+    'client_id' => env('GOOGLE_CLIENT_ID'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    'redirect' => env('GOOGLE_REDIRECT_URI'),
+],
 'openweathermap' => [
 
     'key' => env('OPENWEATHERMAP_KEY'),

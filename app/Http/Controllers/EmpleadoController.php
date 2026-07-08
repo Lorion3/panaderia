@@ -36,7 +36,7 @@ class EmpleadoController extends Controller
         $empleado->contrasena = Hash::make($request->input('contrasena'));
         $empleado->rol = $request->input('rol');
         $empleado->usuario = $request->input('usuario');
-        $empleado->imagen = 'imagenes/empleados/empleado_default.jpg';
+        $empleado->imagen = 'storage/imagenes/empleados/empleado_default.jpg';
         $empleado->estatus = $request->input('estatus');
 
         $empleado->save();

@@ -35,9 +35,9 @@ public function actualizar(Request $request, $id) {
     $producto->existencia = $request->input('existencia');
     $producto->estatus = $request->input('estatus');
     $producto->descripcion = $request->input('descripcion');
-    $producto->imagen1 = 'imagenes/productos/producto_default.jpg';
-    $producto->imagen2 = 'imagenes/productos/producto_default.jpg';
-    $producto->imagen3 = 'imagenes/productos/producto_default.jpg';
+    $producto->imagen1 = 'storage/imagenes/productos/producto_default.jpg';
+    $producto->imagen2 = 'storage/imagenes/productos/producto_default.jpg';
+    $producto->imagen3 = 'storage/imagenes/productos/producto_default.jpg';
     $producto->save();
 
     if ($request->hasFile('imagen1')) {
