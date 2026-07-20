@@ -1,6 +1,11 @@
 @extends('/plantilla/base')
 
 @section('dinamico')
+
+  <flux:heading size="xl" level="1" class="mt-2 text-gray-600 dark:text-gray-400"> Bienvenido al Sistema de
+        Pedidos
+    </flux:heading>
+
 <a href="/pedido/formulario"
         class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition duration-300 inline-block mt-6">
         Agregar Pedido 

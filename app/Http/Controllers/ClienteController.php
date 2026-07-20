@@ -23,7 +23,11 @@ class ClienteController extends Controller
 
     public function inicio()
     {
-        return view('cliente/inicio');
+        $totalClientes = Cliente::count();
+        $clientesActivos = Cliente::where('estatus', 'activo')->count();
+        $clientesInactivos = Cliente::where('estatus', 'inactivo')->count();
+        
+        return view('cliente/inicio' , compact('totalClientes', 'clientesActivos', 'clientesInactivos'));
     }
 
     public function editar(Request $request){ 

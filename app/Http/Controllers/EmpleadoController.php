@@ -21,8 +21,22 @@ class EmpleadoController extends Controller
 
     public function inicio()
     {
+   $totalEmpleados = Empleado::count();
 
-        return view('empleado/inicio');
+    $empleadosActivos = Empleado::where('estatus', 'activo')->count();
+    $empleadosInactivos = Empleado::where('estatus', 'inactivo')->count();
+
+    $administradores = Empleado::where('rol', 'Administrador')->count();
+    $empleados = Empleado::where('rol', 'Empleado')->count();
+
+    return view('empleado.inicio', compact(
+        'totalEmpleados',
+        'empleadosActivos',
+        'empleadosInactivos',
+        'administradores',
+        'empleados'
+    ));
+        // return view('empleado/inicio');
     }
 
     public function guardar(Request $request)

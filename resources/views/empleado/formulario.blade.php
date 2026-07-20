@@ -111,8 +111,8 @@
                     name="rol"
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
                     <option>Administrador</option>
-                    <option>Vendedor</option>
-                    <option>Supervisor</option>
+                    <option>Empleado</option>
+                    
                 </select>
             </div>
 

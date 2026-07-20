@@ -8,34 +8,34 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-
 class Empleado extends Authenticatable
 {
     protected $fillable = [
-     'nombre',
-     'apellido',
-     'correo',
-     'contrasena',
-     'rol',
-     'imagen',
-     'usuario',
-     'telefono',
-     'estatus'];
+        'nombre',
+        'apellido',
+        'correo',
+        'contrasena',
+        'rol',
+        'imagen',
+        'usuario',
+        'telefono',
+        'estatus'
+    ];
 
-     protected $hidden = ['contrasena'];
-    //
+    protected $hidden = ['contrasena'];
+    
     use HasFactory;
     public $timestamps = false;
+
+    // Relaciones existentes
     public function pedidos(){
         return $this->hasMany(Pedido::class,'empleado_id');
     }
-
 
     public function detalle_ventas()
     {
         return $this->hasMany(Detalle_venta::class, 'empleado_id');
     }
-
 
     public function scopeActivo($query)
     {
@@ -46,7 +46,15 @@ class Empleado extends Authenticatable
     {
         return $this->contrasena;
     }
-   
 
+    
+    public function esMaster()
+    {
+        return $this->rol === 'Administrador';
+    }
 
+    public function esBase()
+    {
+        return $this->rol === 'Empleado';
+    }
 }

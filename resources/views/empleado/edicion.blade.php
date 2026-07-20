@@ -117,9 +117,9 @@
                     name="rol"
                     
                     class="w-full rounded-xl border border-gray-300 focus:border-blue-700 focus:ring focus:ring-blue-200 px-4 py-3">
-                    <option value="Administrador" {{ $empleado->rol == 'Administrador' ? 'selected' : '' }}>Administrador</option>
-                    <option value="Vendedor" {{ $empleado->rol == 'Vendedor' ? 'selected' : '' }}>Vendedor</option>
-                    <option value="Supervisor" {{ $empleado->rol == 'Supervisor' ? 'selected' : '' }}>Supervisor</option>
+                    <option value="master" {{ $empleado->rol == 'master' ? 'selected' : '' }}>Administrador</option>
+                    <option value="base" {{ $empleado->rol == 'base' ? 'selected' : '' }}>Vendedor</option>
+                   
                 </select>
             </div>
 

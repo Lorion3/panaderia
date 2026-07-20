@@ -67,22 +67,17 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', User::class),
-        ],
-         'empleados' => [
-          'driver' => 'eloquent',
-          'model' => App\Models\Empleado::class,
+'providers' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => env('AUTH_MODEL', User::class),
     ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+    'empleados' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Empleado::class,
     ],
+],
+  
 
     /*
     |--------------------------------------------------------------------------
